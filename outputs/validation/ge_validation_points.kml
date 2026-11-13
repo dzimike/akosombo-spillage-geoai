@@ -1,0 +1,3247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Akosombo Flood Validation Points (n=200)</name>
+  <description>
+    Stratified random sample from the five-class fused flood confidence map.
+    For each placemark: visit in Google Earth, use historical imagery (Sep-Nov 2023),
+    and record whether the location was flooded (1) or not flooded (0)
+    in the Description field labelled interpreter_label.
+  </description>
+<Style id="class0">
+  <IconStyle>
+    <Icon><href>http://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href></Icon>
+    <scale>0.9</scale>
+  </IconStyle>
+  <LabelStyle><scale>0.7</scale></LabelStyle>
+</Style>
+<Style id="class1">
+  <IconStyle>
+    <Icon><href>http://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href></Icon>
+    <scale>0.9</scale>
+  </IconStyle>
+  <LabelStyle><scale>0.7</scale></LabelStyle>
+</Style>
+<Style id="class2">
+  <IconStyle>
+    <Icon><href>http://maps.google.com/mapfiles/kml/paddle/ylw-blank.png</href></Icon>
+    <scale>0.9</scale>
+  </IconStyle>
+  <LabelStyle><scale>0.7</scale></LabelStyle>
+</Style>
+<Style id="class3">
+  <IconStyle>
+    <Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-blank.png</href></Icon>
+    <scale>0.9</scale>
+  </IconStyle>
+  <LabelStyle><scale>0.7</scale></LabelStyle>
+</Style>
+<Style id="class4">
+  <IconStyle>
+    <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+    <scale>0.9</scale>
+  </IconStyle>
+  <LabelStyle><scale>0.7</scale></LabelStyle>
+</Style>
+<Placemark>
+  <name>V0043</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0043<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.773218<br/>
+    <b>Lat:</b> 6.259441<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.773218,6.259441,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0091</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0091<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.524174<br/>
+    <b>Lat:</b> 5.808617<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.524174,5.808617,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0001</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0001<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.244206<br/>
+    <b>Lat:</b> 5.951828<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.244206,5.951828,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0142</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0142<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.473081<br/>
+    <b>Lat:</b> 5.798730<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.473081,5.798730,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0018</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0018<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.778874<br/>
+    <b>Lat:</b> 5.880810<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.778874,5.880810,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0109</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0109<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.262886<br/>
+    <b>Lat:</b> 6.103905<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.262886,6.103905,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0060</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0060<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.311534<br/>
+    <b>Lat:</b> 6.047161<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.311534,6.047161,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0003</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0003<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.276861<br/>
+    <b>Lat:</b> 5.875226<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.276861,5.875226,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0063</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0063<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.189003<br/>
+    <b>Lat:</b> 6.091883<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.189003,6.091883,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0127</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0127<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.481423<br/>
+    <b>Lat:</b> 6.064609<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.481423,6.064609,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0130</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0130<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.449127<br/>
+    <b>Lat:</b> 5.803572<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.449127,5.803572,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0097</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0097<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.779164<br/>
+    <b>Lat:</b> 6.118939<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.779164,6.118939,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0121</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0121<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.379045<br/>
+    <b>Lat:</b> 5.815284<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.379045,5.815284,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0107</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0107<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.437490<br/>
+    <b>Lat:</b> 5.802649<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.437490,5.802649,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0152</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0152<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.492233<br/>
+    <b>Lat:</b> 5.833918<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.492233,5.833918,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0197</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0197<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.233020<br/>
+    <b>Lat:</b> 5.715883<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.233020,5.715883,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0187</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0187<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.372115<br/>
+    <b>Lat:</b> 6.040105<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.372115,6.040105,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0019</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0019<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.336395<br/>
+    <b>Lat:</b> 5.996524<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.336395,5.996524,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0079</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0079<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.534499<br/>
+    <b>Lat:</b> 6.056409<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.534499,6.056409,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0102</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0102<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.561722<br/>
+    <b>Lat:</b> 5.800977<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.561722,5.800977,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0136</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0136<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.475165<br/>
+    <b>Lat:</b> 6.101491<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.475165,6.101491,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0186</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0186<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.708907<br/>
+    <b>Lat:</b> 5.741531<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.708907,5.741531,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0013</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0013<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.726073<br/>
+    <b>Lat:</b> 6.149192<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.726073,6.149192,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0167</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0167<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.400332<br/>
+    <b>Lat:</b> 5.633458<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.400332,5.633458,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0177</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0177<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.196068<br/>
+    <b>Lat:</b> 5.703083<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.196068,5.703083,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0021</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0021<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.269646<br/>
+    <b>Lat:</b> 6.350431<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.269646,6.350431,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0084</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0084<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.254059<br/>
+    <b>Lat:</b> 5.768691<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.254059,5.768691,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0090</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0090<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.584458<br/>
+    <b>Lat:</b> 5.803723<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.584458,5.803723,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0073</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0073<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.362348<br/>
+    <b>Lat:</b> 5.812674<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.362348,5.812674,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0008</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0008<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.608664<br/>
+    <b>Lat:</b> 5.867221<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.608664,5.867221,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0012</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0012<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.662729<br/>
+    <b>Lat:</b> 6.106024<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.662729,6.106024,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0172</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0172<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.724109<br/>
+    <b>Lat:</b> 5.667226<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.724109,5.667226,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0174</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0174<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.616683<br/>
+    <b>Lat:</b> 5.753409<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.616683,5.753409,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0058</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0058<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.351365<br/>
+    <b>Lat:</b> 5.980989<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.351365,5.980989,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0023</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0023<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.288193<br/>
+    <b>Lat:</b> 6.140148<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.288193,6.140148,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0158</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0158<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.469856<br/>
+    <b>Lat:</b> 5.846067<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.469856,5.846067,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0042</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0042<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.297521<br/>
+    <b>Lat:</b> 6.145690<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.297521,6.145690,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0050</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0050<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.505358<br/>
+    <b>Lat:</b> 6.013346<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.505358,6.013346,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0028</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0028<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.587343<br/>
+    <b>Lat:</b> 5.999812<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.587343,5.999812,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0009</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0009<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.276477<br/>
+    <b>Lat:</b> 6.230447<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.276477,6.230447,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0081</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0081<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.719903<br/>
+    <b>Lat:</b> 5.837965<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.719903,5.837965,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0099</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0099<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.530687<br/>
+    <b>Lat:</b> 5.783113<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.530687,5.783113,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0106</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0106<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.450013<br/>
+    <b>Lat:</b> 5.845196<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.450013,5.845196,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0052</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0052<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.490978<br/>
+    <b>Lat:</b> 6.160895<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.490978,6.160895,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0051</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0051<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.643916<br/>
+    <b>Lat:</b> 6.017675<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.643916,6.017675,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0124</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0124<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.451951<br/>
+    <b>Lat:</b> 6.097035<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.451951,6.097035,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0038</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0038<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.424448<br/>
+    <b>Lat:</b> 5.852486<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.424448,5.852486,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0199</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0199<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.575513<br/>
+    <b>Lat:</b> 5.728658<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.575513,5.728658,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0120</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0120<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.449960<br/>
+    <b>Lat:</b> 6.110142<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.449960,6.110142,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0117</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0117<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.217048<br/>
+    <b>Lat:</b> 6.104000<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.217048,6.104000,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0048</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0048<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.600983<br/>
+    <b>Lat:</b> 6.125402<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.600983,6.125402,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0145</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0145<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.483214<br/>
+    <b>Lat:</b> 6.062611<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.483214,6.062611,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0114</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0114<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.789822<br/>
+    <b>Lat:</b> 5.806535<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.789822,5.806535,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0150</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0150<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.451575<br/>
+    <b>Lat:</b> 5.850062<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.451575,5.850062,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0049</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0049<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.473278<br/>
+    <b>Lat:</b> 6.116583<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.473278,6.116583,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0076</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0076<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.391603<br/>
+    <b>Lat:</b> 6.054884<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.391603,6.054884,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0070</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0070<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.506464<br/>
+    <b>Lat:</b> 5.787778<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.506464,5.787778,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0004</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0004<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.687027<br/>
+    <b>Lat:</b> 6.381659<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.687027,6.381659,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0055</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0055<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.332513<br/>
+    <b>Lat:</b> 6.157123<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.332513,6.157123,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0088</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0088<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.265218<br/>
+    <b>Lat:</b> 5.873849<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.265218,5.873849,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0132</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0132<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.341940<br/>
+    <b>Lat:</b> 5.792656<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.341940,5.792656,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0156</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0156<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.517780<br/>
+    <b>Lat:</b> 5.795293<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.517780,5.795293,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0185</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0185<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.772195<br/>
+    <b>Lat:</b> 5.605981<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.772195,5.605981,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0151</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0151<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.565362<br/>
+    <b>Lat:</b> 5.792016<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.565362,5.792016,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0037</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0037<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.468534<br/>
+    <b>Lat:</b> 6.052140<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.468534,6.052140,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0057</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0057<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.284167<br/>
+    <b>Lat:</b> 6.376801<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.284167,6.376801,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0061</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0061<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.393948<br/>
+    <b>Lat:</b> 5.834340<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.393948,5.834340,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0148</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0148<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.450028<br/>
+    <b>Lat:</b> 5.803476<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.450028,5.803476,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0059</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0059<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.448015<br/>
+    <b>Lat:</b> 5.916095<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.448015,5.916095,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0165</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0165<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.215981<br/>
+    <b>Lat:</b> 5.684184<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.215981,5.684184,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0085</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0085<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.735652<br/>
+    <b>Lat:</b> 5.806716<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.735652,5.806716,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0034</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0034<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.384839<br/>
+    <b>Lat:</b> 5.893908<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.384839,5.893908,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0072</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0072<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.745461<br/>
+    <b>Lat:</b> 5.790582<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.745461,5.790582,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0189</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0189<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.580175<br/>
+    <b>Lat:</b> 5.651792<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.580175,5.651792,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0020</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0020<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.395259<br/>
+    <b>Lat:</b> 6.204951<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.395259,6.204951,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0095</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0095<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.417212<br/>
+    <b>Lat:</b> 5.849009<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.417212,5.849009,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0111</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0111<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.470774<br/>
+    <b>Lat:</b> 5.790075<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.470774,5.790075,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0045</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0045<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.299555<br/>
+    <b>Lat:</b> 5.807807<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.299555,5.807807,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0010</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0010<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.516730<br/>
+    <b>Lat:</b> 5.843879<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.516730,5.843879,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0025</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0025<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.554643<br/>
+    <b>Lat:</b> 6.197042<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.554643,6.197042,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0103</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0103<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.455083<br/>
+    <b>Lat:</b> 6.107129<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.455083,6.107129,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0002</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0002<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.409849<br/>
+    <b>Lat:</b> 5.971869<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.409849,5.971869,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0069</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0069<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.524750<br/>
+    <b>Lat:</b> 5.785227<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.524750,5.785227,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0171</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0171<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.401177<br/>
+    <b>Lat:</b> 5.821743<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.401177,5.821743,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0157</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0157<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.308251<br/>
+    <b>Lat:</b> 6.056122<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.308251,6.056122,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0118</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0118<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.381516<br/>
+    <b>Lat:</b> 5.821320<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.381516,5.821320,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0027</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0027<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.334328<br/>
+    <b>Lat:</b> 5.877866<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.334328,5.877866,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0098</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0098<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.439238<br/>
+    <b>Lat:</b> 5.793428<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.439238,5.793428,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0011</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0011<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.190026<br/>
+    <b>Lat:</b> 6.127555<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.190026,6.127555,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0064</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0064<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.548069<br/>
+    <b>Lat:</b> 6.021106<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.548069,6.021106,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0065</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0065<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.713777<br/>
+    <b>Lat:</b> 5.960330<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.713777,5.960330,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0029</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0029<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.800897<br/>
+    <b>Lat:</b> 5.858364<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.800897,5.858364,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0075</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0075<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.751462<br/>
+    <b>Lat:</b> 5.798576<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.751462,5.798576,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0169</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0169<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.614961<br/>
+    <b>Lat:</b> 5.961981<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.614961,5.961981,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0168</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0168<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.380301<br/>
+    <b>Lat:</b> 5.645767<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.380301,5.645767,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0068</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0068<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.565839<br/>
+    <b>Lat:</b> 5.853410<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.565839,5.853410,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0144</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0144<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.268864<br/>
+    <b>Lat:</b> 5.771406<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.268864,5.771406,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0188</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0188<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.269782<br/>
+    <b>Lat:</b> 5.647122<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.269782,5.647122,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0166</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0166<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.782269<br/>
+    <b>Lat:</b> 5.686527<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.782269,5.686527,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0195</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0195<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.282710<br/>
+    <b>Lat:</b> 5.621309<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.282710,5.621309,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0183</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0183<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.426533<br/>
+    <b>Lat:</b> 5.612715<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.426533,5.612715,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0056</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0056<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.444748<br/>
+    <b>Lat:</b> 5.970839<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.444748,5.970839,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0173</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0173<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.632231<br/>
+    <b>Lat:</b> 5.760262<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.632231,5.760262,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0005</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0005<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.730924<br/>
+    <b>Lat:</b> 6.299645<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.730924,6.299645,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0044</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0044<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.404867<br/>
+    <b>Lat:</b> 5.805556<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.404867,5.805556,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0036</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0036<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.488568<br/>
+    <b>Lat:</b> 6.368414<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.488568,6.368414,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0128</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0128<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.742016<br/>
+    <b>Lat:</b> 5.814979<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.742016,5.814979,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0192</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0192<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.313871<br/>
+    <b>Lat:</b> 5.631699<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.313871,5.631699,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0053</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0053<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.708334<br/>
+    <b>Lat:</b> 6.332757<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.708334,6.332757,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0163</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0163<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.537591<br/>
+    <b>Lat:</b> 5.659728<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.537591,5.659728,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0074</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0074<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.616609<br/>
+    <b>Lat:</b> 5.965852<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.616609,5.965852,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0126</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0126<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.789854<br/>
+    <b>Lat:</b> 5.797869<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.789854,5.797869,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0033</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0033<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.459459<br/>
+    <b>Lat:</b> 6.361567<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.459459,6.361567,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0104</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0104<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.229123<br/>
+    <b>Lat:</b> 6.055967<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.229123,6.055967,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0113</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0113<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.560913<br/>
+    <b>Lat:</b> 5.844322<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.560913,5.844322,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0082</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0082<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.550623<br/>
+    <b>Lat:</b> 5.828135<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.550623,5.828135,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0140</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0140<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.291798<br/>
+    <b>Lat:</b> 6.080427<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.291798,6.080427,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0108</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0108<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.561419<br/>
+    <b>Lat:</b> 5.795923<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.561419,5.795923,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0066</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0066<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.352386<br/>
+    <b>Lat:</b> 5.820771<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.352386,5.820771,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0039</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0039<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.773901<br/>
+    <b>Lat:</b> 6.353768<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.773901,6.353768,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0017</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0017<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.240232<br/>
+    <b>Lat:</b> 5.904704<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.240232,5.904704,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0062</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0062<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.582146<br/>
+    <b>Lat:</b> 6.004992<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.582146,6.004992,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0190</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0190<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.263979<br/>
+    <b>Lat:</b> 5.641194<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.263979,5.641194,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0093</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0093<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.695634<br/>
+    <b>Lat:</b> 5.821243<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.695634,5.821243,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0054</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0054<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.548603<br/>
+    <b>Lat:</b> 6.184351<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.548603,6.184351,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0159</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0159<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.530237<br/>
+    <b>Lat:</b> 5.826728<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.530237,5.826728,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0179</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0179<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.776229<br/>
+    <b>Lat:</b> 5.727369<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.776229,5.727369,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0031</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0031<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.790504<br/>
+    <b>Lat:</b> 5.960258<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.790504,5.960258,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0153</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0153<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.480633<br/>
+    <b>Lat:</b> 5.795071<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.480633,5.795071,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0147</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0147<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.517002<br/>
+    <b>Lat:</b> 5.815163<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.517002,5.815163,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0135</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0135<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.360823<br/>
+    <b>Lat:</b> 5.829301<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.360823,5.829301,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0149</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0149<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.456854<br/>
+    <b>Lat:</b> 6.073616<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.456854,6.073616,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0022</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0022<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.608514<br/>
+    <b>Lat:</b> 6.023869<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.608514,6.023869,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0092</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0092<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.574183<br/>
+    <b>Lat:</b> 5.818415<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.574183,5.818415,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0080</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0080<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.500969<br/>
+    <b>Lat:</b> 5.788625<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.500969,5.788625,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0067</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0067<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.751133<br/>
+    <b>Lat:</b> 5.977770<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.751133,5.977770,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0007</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0007<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.614946<br/>
+    <b>Lat:</b> 6.055337<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.614946,6.055337,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0200</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0200<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.208115<br/>
+    <b>Lat:</b> 5.663996<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.208115,5.663996,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0164</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0164<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.235215<br/>
+    <b>Lat:</b> 5.673058<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.235215,5.673058,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0026</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0026<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.790633<br/>
+    <b>Lat:</b> 5.860059<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.790633,5.860059,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0006</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0006<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.255670<br/>
+    <b>Lat:</b> 6.295334<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.255670,6.295334,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0134</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0134<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.465423<br/>
+    <b>Lat:</b> 6.073561<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.465423,6.073561,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0047</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0047<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.682526<br/>
+    <b>Lat:</b> 5.856899<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.682526,5.856899,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0175</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0175<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.603704<br/>
+    <b>Lat:</b> 5.638103<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.603704,5.638103,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0161</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0161<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.735663<br/>
+    <b>Lat:</b> 5.725920<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.735663,5.725920,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0100</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0100<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.274280<br/>
+    <b>Lat:</b> 6.018214<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.274280,6.018214,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0071</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0071<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.407195<br/>
+    <b>Lat:</b> 6.095605<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.407195,6.095605,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0078</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0078<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.354606<br/>
+    <b>Lat:</b> 5.814978<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.354606,5.814978,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0181</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0181<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.495161<br/>
+    <b>Lat:</b> 5.618720<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.495161,5.618720,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0083</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0083<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.342270<br/>
+    <b>Lat:</b> 5.818122<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.342270,5.818122,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0014</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0014<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.587995<br/>
+    <b>Lat:</b> 5.919902<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.587995,5.919902,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0116</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0116<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.559709<br/>
+    <b>Lat:</b> 5.810741<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.559709,5.810741,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0162</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0162<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.193349<br/>
+    <b>Lat:</b> 5.634992<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.193349,5.634992,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0137</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0137<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.380901<br/>
+    <b>Lat:</b> 6.045740<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.380901,6.045740,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0035</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0035<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.624362<br/>
+    <b>Lat:</b> 6.141135<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.624362,6.141135,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0154</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0154<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.506905<br/>
+    <b>Lat:</b> 5.829944<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.506905,5.829944,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0178</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0178<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.243143<br/>
+    <b>Lat:</b> 5.671929<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.243143,5.671929,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0176</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0176<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.519001<br/>
+    <b>Lat:</b> 5.730182<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.519001,5.730182,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0198</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0198<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.368510<br/>
+    <b>Lat:</b> 5.710949<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.368510,5.710949,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0015</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0015<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.634552<br/>
+    <b>Lat:</b> 6.298249<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.634552,6.298249,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0133</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0133<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.207576<br/>
+    <b>Lat:</b> 5.982030<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.207576,5.982030,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0143</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0143<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.511057<br/>
+    <b>Lat:</b> 5.801655<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.511057,5.801655,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0125</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0125<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.801595<br/>
+    <b>Lat:</b> 5.774501<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.801595,5.774501,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0030</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0030<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.337533<br/>
+    <b>Lat:</b> 6.108323<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.337533,6.108323,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0193</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0193<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.392140<br/>
+    <b>Lat:</b> 6.068698<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.392140,6.068698,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0046</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0046<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.233131<br/>
+    <b>Lat:</b> 6.241372<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.233131,6.241372,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0086</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0086<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.708280<br/>
+    <b>Lat:</b> 5.960818<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.708280,5.960818,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0141</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0141<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.526163<br/>
+    <b>Lat:</b> 5.823955<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.526163,5.823955,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0146</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0146<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.457306<br/>
+    <b>Lat:</b> 5.843435<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.457306,5.843435,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0077</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0077<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.737519<br/>
+    <b>Lat:</b> 5.977863<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.737519,5.977863,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0024</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0024<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.218488<br/>
+    <b>Lat:</b> 6.369448<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.218488,6.369448,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0122</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0122<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.473306<br/>
+    <b>Lat:</b> 6.064841<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.473306,6.064841,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0094</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0094<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.569071<br/>
+    <b>Lat:</b> 6.005259<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.569071,6.005259,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0101</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0101<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.375928<br/>
+    <b>Lat:</b> 6.187555<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.375928,6.187555,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0089</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0089<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.430381<br/>
+    <b>Lat:</b> 5.849470<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.430381,5.849470,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0105</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0105<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.456583<br/>
+    <b>Lat:</b> 6.101882<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.456583,6.101882,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0180</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0180<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.785833<br/>
+    <b>Lat:</b> 5.694086<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.785833,5.694086,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0016</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0016<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.307513<br/>
+    <b>Lat:</b> 6.371143<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.307513,6.371143,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0138</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0138<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.418008<br/>
+    <b>Lat:</b> 5.949333<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.418008,5.949333,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0170</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0170<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.761521<br/>
+    <b>Lat:</b> 5.710856<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.761521,5.710856,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0196</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0196<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.505894<br/>
+    <b>Lat:</b> 5.709494<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.505894,5.709494,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0041</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0041<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.204818<br/>
+    <b>Lat:</b> 6.171364<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.204818,6.171364,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0139</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0139<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.186473<br/>
+    <b>Lat:</b> 6.091446<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.186473,6.091446,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0160</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0160<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.321257<br/>
+    <b>Lat:</b> 6.058481<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.321257,6.058481,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0087</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0087<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.533460<br/>
+    <b>Lat:</b> 5.908876<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.533460,5.908876,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0194</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0194<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.614600<br/>
+    <b>Lat:</b> 5.694555<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.614600,5.694555,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0155</name>
+  <styleUrl>#class3</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0155<br/>
+    <b>Map class:</b> 3 – SAR + optical<br/>
+    <b>Lon:</b> 0.487259<br/>
+    <b>Lat:</b> 5.802345<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.487259,5.802345,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0032</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0032<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.281026<br/>
+    <b>Lat:</b> 6.365442<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.281026,6.365442,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0115</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0115<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.568219<br/>
+    <b>Lat:</b> 5.787664<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.568219,5.787664,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0131</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0131<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.276703<br/>
+    <b>Lat:</b> 6.090905<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.276703,6.090905,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0184</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0184<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.606624<br/>
+    <b>Lat:</b> 5.730630<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.606624,5.730630,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0191</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0191<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.563871<br/>
+    <b>Lat:</b> 5.668145<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.563871,5.668145,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0129</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0129<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.554895<br/>
+    <b>Lat:</b> 6.016638<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.554895,6.016638,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0112</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0112<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.547478<br/>
+    <b>Lat:</b> 5.844227<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.547478,5.844227,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0119</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0119<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.403176<br/>
+    <b>Lat:</b> 6.073415<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.403176,6.073415,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0123</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0123<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.225363<br/>
+    <b>Lat:</b> 6.106299<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.225363,6.106299,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0110</name>
+  <styleUrl>#class2</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0110<br/>
+    <b>Map class:</b> 2 – Optical only<br/>
+    <b>Lon:</b> 0.458274<br/>
+    <b>Lat:</b> 5.839637<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.458274,5.839637,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0182</name>
+  <styleUrl>#class4</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0182<br/>
+    <b>Map class:</b> 4 – Permanent water<br/>
+    <b>Lon:</b> 0.544806<br/>
+    <b>Lat:</b> 5.748443<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.544806,5.748443,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0096</name>
+  <styleUrl>#class1</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0096<br/>
+    <b>Map class:</b> 1 – SAR only<br/>
+    <b>Lon:</b> 0.424564<br/>
+    <b>Lat:</b> 5.812210<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.424564,5.812210,0</coordinates></Point>
+</Placemark>
+<Placemark>
+  <name>V0040</name>
+  <styleUrl>#class0</styleUrl>
+  <description><![CDATA[
+    <b>Point ID:</b> V0040<br/>
+    <b>Map class:</b> 0 – Not flooded<br/>
+    <b>Lon:</b> 0.474266<br/>
+    <b>Lat:</b> 6.267647<br/>
+    <hr/>
+    <b>interpreter_label:</b> ___  (enter 0 = not flooded, 1 = flooded)<br/>
+    <b>Notes:</b> ___<br/>
+    <br/>
+    Use the historical imagery slider to view Sep–Nov 2023 imagery.
+  ]]></description>
+  <Point><coordinates>0.474266,6.267647,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

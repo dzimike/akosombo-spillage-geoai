@@ -1,0 +1,5 @@
+definition,flood_km2,of_which_sea_km2,sar_only_km2,optical_only_km2,agreement_km2,permanent_water_km2
+"v1_original (sparse SAR, sea unmasked)",527.6245,371.9954,,,,
+"v1_original, land only",155.6291,0.0,,,,
+primary (event water outside permanent water),72.2481,0.0,15.7029,10.766,45.7792,1447.7128
+"primary, new-only (not SAR-dark in pre-event window)",20.9436,0.0,4.3601,9.9047,6.6788,

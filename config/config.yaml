@@ -1,0 +1,50 @@
+project:
+  name: akosombo-spillage-geoai
+  title: GeoAI-Driven Flood Inundation, Exposure, and Recovery Modeling of the 2023 Akosombo Dam Spillage
+  country: Ghana
+  study_area: Lower Volta Basin
+
+crs:
+  geographic: EPSG:4326
+  projected: EPSG:32630
+
+paths:
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+  outputs: outputs
+
+event_windows:
+  pre_event:
+    start: "2023-08-01"
+    end: "2023-09-10"
+  event:
+    start: "2023-09-15"
+    end: "2023-11-15"
+  post_event_early:
+    start: "2023-11-16"
+    end: "2024-01-31"
+  post_event_late:
+    start: "2024-02-01"
+    end: "2024-12-31"
+
+study_communities:
+  - Mepe
+  - Battor
+  - Sogakope
+  - Mafi
+  - Adidome
+  - Ada
+
+aoi:
+  default_buffer_km: 20
+  buffer_options_km: [10, 20, 30]
+  dam_locations:
+    akosombo:
+      name: Akosombo Dam
+      lon: 0.0537
+      lat: 6.2988
+    kpong:
+      name: Kpong Dam
+      lon: 0.0819
+      lat: 6.1491

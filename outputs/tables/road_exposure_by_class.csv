@@ -1,0 +1,6 @@
+road_class,n_segments,flooded_length_km,total_length_km,pct_flooded
+local,42,3.2288,2986.9138,0.1
+other,6,1.9524,72.9633,2.7
+primary,2,0.0698,194.1361,0.0
+secondary,6,0.38,882.8785,0.0
+tracks_paths,54,6.1062,817.791,0.7

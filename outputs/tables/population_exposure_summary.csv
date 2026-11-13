@@ -1,0 +1,7 @@
+metric,value,note
+total_aoi_population,366077,WorldPop 2020 1km UN-adjusted
+exposed_pop_all_flood,5520,ESTIMATED — not confirmed displaced
+exposed_pop_high_conf,4428,
+exposed_pop_medium_conf,1091,
+exposed_pop_low_conf,0,
+pct_aoi_exposed,1.51,% of total AOI population in flood zone

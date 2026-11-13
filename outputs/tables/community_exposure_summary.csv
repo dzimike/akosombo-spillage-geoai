@@ -1,0 +1,25 @@
+community_name,district,total_pop_estimate,exposed_pop_estimate,pct_pop_exposed,total_buildings,exposed_buildings,pct_buildings_exposed,flooded_road_km,total_facilities,flooded_facilities_direct,flooded_facilities_500m,schools_flooded,health_facilities_flooded,flood_area_km2
+Mepe,North Tongu,43204,2084,4.8,20299.0,12.0,0.1,0.0,131,0,24,0,0,12.348
+Battor,North Tongu,37657,1929,5.1,1174.0,0.0,0.0,1.7906,131,0,24,0,0,12.319
+Sogakope,South Tongu,63661,1073,1.7,16518.0,8.0,0.0,0.0,131,0,24,0,0,6.211
+Tefle,South Tongu,65017,1240,1.9,127.0,0.0,0.0,0.0,131,0,24,0,0,6.731
+Vume,South Tongu,68584,1441,2.1,39.0,0.0,0.0,0.4372,131,0,24,0,0,7.502
+Adidome,Central Tongu,47714,1675,3.5,442.0,0.0,0.0,0.0,131,0,24,0,0,11.314
+Ada,Ada East,64180,648,1.0,4473.0,3.0,0.1,0.0,131,0,24,0,0,5.254
+Fievie,South Tongu,64082,1351,2.1,0.0,0.0,0.0,0.0,131,0,24,0,0,6.968
+Sokpoe,South Tongu,66413,1094,1.6,0.0,0.0,0.0,0.847,131,0,24,0,0,6.397
+Agbove,Ada East,58837,487,0.8,166.0,0.0,0.0,0.0,131,0,24,0,0,3.099
+Agbeve,Ada East,61826,459,0.7,32.0,0.0,0.0,0.0,131,0,24,0,0,3.123
+Alikekope,Ada East,59719,599,1.0,0.0,0.0,0.0,0.0,131,0,24,0,0,4.8
+Asidovui,Ada East,57984,325,0.6,119.0,0.0,0.0,0.1696,131,0,24,0,0,2.173
+Tadze,South Tongu,67892,542,0.8,498.0,0.0,0.0,0.122,131,0,24,0,0,2.197
+Agordome,Ada East,66932,664,1.0,221.0,0.0,0.0,0.0,131,0,24,0,0,2.551
+Tadame,South Tongu,69030,1467,2.1,0.0,0.0,0.0,0.0,131,0,24,0,0,7.595
+Devime,Central Tongu,49625,1752,3.5,0.0,0.0,0.0,4.3402,131,0,24,0,0,10.582
+Mafi-Dugame,Central Tongu,51746,1772,3.4,0.0,0.0,0.0,1.3044,131,0,24,0,0,11.38
+Akuse,Lower Manya Krobo,2526,175,6.9,2602.0,0.0,0.0,0.0,131,0,24,0,0,1.976
+Torgorme,Lower Manya Krobo,2866,190,6.6,435.0,0.0,0.0,0.0,131,0,24,0,0,2.221
+Asutsure,Shai-Osudoku,7689,364,4.7,2981.0,0.0,0.0,1.446,131,0,24,0,0,4.524
+Kewum Atrobinya,North Tongu,11828,574,4.9,1722.0,1.0,0.1,0.0,131,0,24,0,0,6.452
+Volivo Landor,North Tongu,14303,639,4.5,553.0,0.0,0.0,0.2618,131,0,24,0,0,7.355
+Alabonu,North Tongu,9088,461,5.1,0.0,0.0,0.0,0.0,131,0,24,0,0,5.218

@@ -1,0 +1,5 @@
+group,area_km2,in_OSM_salt_pond_pct,within_30m_of_salt_pond_pct,in_OSM_wetland_pct,flagged_pct_of_group
+Unresolved lagoon-margin patches,8.9577,10.133181508646192,11.920470656530137,68.89603358004845,
+Rest of the flood extent,35.2585,0.16648467745366366,0.17556050314108654,1.433129599954621,
+"Background land, same districts",803.0387,2.9681383973150983,3.292182556083536,11.89588994901491,
+OSM salt-pond area not in pre-existing water,24.8017,100.0,100.0,,3.8965070942717634

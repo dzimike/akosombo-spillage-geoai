@@ -1,0 +1,50 @@
+figure:
+  dpi: 300
+  width_inches: 10
+  height_inches: 8
+  font_family: DejaVu Sans
+  font_size: 10
+  title_size: 12
+
+colors:
+  flood_high_confidence: "#1565C0"
+  flood_medium_confidence: "#42A5F5"
+  flood_low_confidence: "#90CAF9"
+  permanent_water: "#0D47A1"
+  uncertain: "#B0BEC5"
+  not_flooded: "#E8F5E9"
+  exposed_building: "#E53935"
+  road_flooded: "#FF6F00"
+  road_intact: "#616161"
+  cropland_exposed: "#F9A825"
+  recovery_high: "#2E7D32"
+  recovery_medium: "#F9A825"
+  recovery_low: "#B71C1C"
+
+colormaps:
+  susceptibility: RdYlGn_r
+  recovery_index: RdYlGn
+  flood_confidence: Blues
+  population_exposure: YlOrRd
+  depth_proxy: BuPu
+
+basemap:
+  provider: contextily
+  source: CartoDB.Positron
+  zoom: 11
+
+scalebar:
+  location: lower_right
+  length_fraction: 0.2
+  units: km
+
+north_arrow:
+  location: upper_right
+  size: 0.07
+
+legend:
+  location: lower_left
+  framealpha: 0.8
+
+projection:
+  crs_label: "WGS 84 / UTM Zone 30N (EPSG:32630)"

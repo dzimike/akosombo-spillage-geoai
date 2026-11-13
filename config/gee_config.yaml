@@ -1,0 +1,45 @@
+gee:
+  project: "instigis"
+  service_account: ""
+  credentials_path: ""
+
+sentinel1:
+  collection: COPERNICUS/S1_GRD
+  polarizations: [VV, VH]
+  instrument_mode: IW
+  orbit_pass: [ASCENDING, DESCENDING]
+  resolution_meters: 10
+
+sentinel2:
+  collection: COPERNICUS/S2_SR_HARMONIZED
+  cloud_cover_max: 20
+  bands:
+    blue: B2
+    green: B3
+    red: B4
+    nir: B8
+    swir1: B11
+    swir2: B12
+
+landsat:
+  collection_l8: LANDSAT/LC08/C02/T1_L2
+  collection_l9: LANDSAT/LC09/C02/T1_L2
+  cloud_cover_max: 20
+
+dem:
+  srtm: USGS/SRTMGL1_003
+  copernicus: COPERNICUS/DEM/GLO30
+  merit: MERIT/DEM/v1_0_3
+
+permanent_water:
+  jrc_occurrence: JRC/GSW1_4/GlobalSurfaceWater
+  occurrence_threshold: 50
+
+viirs_ntl:
+  collection: NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG
+
+export:
+  scale_meters: 10
+  max_pixels: 1e10
+  file_format: GeoTIFF
+  drive_folder: akosombo_geoai_exports

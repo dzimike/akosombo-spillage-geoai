@@ -1,0 +1,8 @@
+metric,value
+total_buildings_in_aoi,59532
+exposed_buildings,59
+pct_buildings_exposed,0.1
+exposed_footprint_area_ha,0.28
+flood_extent_km2,44.22
+exposed_type_yes,58
+exposed_type_construction,1

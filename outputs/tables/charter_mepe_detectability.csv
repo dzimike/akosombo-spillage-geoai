@@ -1,0 +1,23 @@
+layer,metric,value
+VV 23 Oct (low = water),ROC AUC (flagged vs other buildings),0.5460727751908798
+VH 23 Oct (low = water),ROC AUC (flagged vs other buildings),0.6160615909329997
+dVV 23 Oct - pre-event median (negative = drop),ROC AUC (flagged vs other buildings),0.47942539490950165
+dVH 23 Oct - pre-event median,ROC AUC (flagged vs other buildings),0.5353217688845087
+event-composite VV,ROC AUC (flagged vs other buildings),0.586666925048862
+event-composite VH,ROC AUC (flagged vs other buildings),0.662127445172221
+Sentinel-2 event NDWI,ROC AUC (flagged vs other buildings),0.6201290342227217
+Sentinel-2 event MNDWI,ROC AUC (flagged vs other buildings),0.6973633942561639
+XGBoost flood probability,ROC AUC (flagged vs other buildings),0.7352362259220091
+U-Net full probability,ROC AUC (flagged vs other buildings),0.6362029444496736
+U-Net SAR-only probability,ROC AUC (flagged vs other buildings),0.6314537874215856
+U-Net optical-only probability,ROC AUC (flagged vs other buildings),0.8337075261196715
+U-Net terrain-only probability,ROC AUC (flagged vs other buildings),0.6352990681630687
+fused flood (classes 1-3),"share of flagged buildings, centroid in class",0.0
+fused flood (classes 1-3),"share of other buildings, centroid in class",0.0
+fused flood (classes 1-3),"share of flagged buildings, class within 30 m",0.01675977653631285
+fused flood (classes 1-3),"share of other buildings, class within 30 m",0.003468780971258672
+pre-existing water (class 4),"share of flagged buildings, centroid in class",0.0
+pre-existing water (class 4),"share of other buildings, centroid in class",0.0
+pre-existing water (class 4),"share of flagged buildings, class within 30 m",0.0
+pre-existing water (class 4),"share of other buildings, class within 30 m",0.0027254707631318136
+buildings,flagged / total in map frame,179 / 4215

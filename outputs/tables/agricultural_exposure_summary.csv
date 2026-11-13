@@ -1,0 +1,10 @@
+metric,value,note
+cropland_mask_pixels,11003769,NDVI pre >= 0.35
+cropland_area_km2,1100.38,proxy only
+exposed_cropland_pixels,56187,
+exposed_cropland_km2,5.619,
+exposed_cropland_ha,561.9,
+mean_ndvi_change_in_flood,-0.1455,post - pre NDVI; negative = vegetation stress
+pixels_significant_stress,25365,NDVI change < -0.1
+pct_significant_stress,45.1,
+note,PROXY — not calibrated crop loss estimate,

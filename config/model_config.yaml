@@ -1,0 +1,86 @@
+random_seed: 42
+
+data_split:
+  train: 0.7
+  validation: 0.15
+  test: 0.15
+  spatial_blocking: true
+  block_size_km: 10
+
+models:
+  random_forest:
+    n_estimators: 500
+    max_depth: null
+    min_samples_leaf: 5
+    class_weight: balanced
+    n_jobs: -1
+  xgboost:
+    n_estimators: 500
+    learning_rate: 0.03
+    max_depth: 6
+    subsample: 0.8
+    colsample_bytree: 0.8
+    scale_pos_weight: null  # set automatically from class imbalance
+  lightgbm:
+    n_estimators: 500
+    learning_rate: 0.03
+    num_leaves: 63
+    class_weight: balanced
+  unet:
+    encoder: resnet34
+    encoder_weights: imagenet
+    patch_size: 256
+    batch_size: 8
+    epochs: 50
+    learning_rate: 0.0001
+    loss: dice_bce
+    patience: 10
+
+features:
+  terrain:
+    - elevation
+    - slope
+    - aspect_sin
+    - aspect_cos
+    - twi
+    - flow_accumulation
+    - relative_elevation
+    - hand_proxy
+  hydro:
+    - distance_to_main_river
+    - distance_to_nearest_waterway
+    - distance_to_dam
+    - distance_to_lake
+    - river_density_1km
+    - drainage_density_1km
+  landcover:
+    - landcover_class
+    - ndvi_pre
+    - ndwi_pre
+    - mndwi_pre
+    - ndbi_pre
+  settlement:
+    - building_density_500m
+    - road_density_1km
+    - population_density
+    - distance_to_road
+  sar:
+    - sar_vv_pre
+    - sar_vv_event
+    - sar_vv_change
+    - sar_vv_ratio
+
+metrics:
+  - precision
+  - recall
+  - f1
+  - iou
+  - roc_auc
+  - pr_auc
+  - balanced_accuracy
+
+recovery_weights:
+  vegetation_recovery: 0.30
+  water_recession: 0.30
+  road_accessibility: 0.25
+  settlement_activity_proxy: 0.15

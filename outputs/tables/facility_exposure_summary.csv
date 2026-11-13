@@ -1,0 +1,8 @@
+facility_type,total,directly_flooded,within_500m_flood,access_road_flooded
+clinic,2,0,0,0
+health_post,23,0,2,0
+hospital,8,0,2,2
+marketplace,9,0,3,1
+pharmacy,9,0,1,0
+school,79,0,16,7
+yes,1,0,0,0

@@ -1,0 +1,7 @@
+analysis,metric,value,note
+recovery_weight_mc,mean_rank_std,0.248,2000 Dirichlet(alpha=2) draws
+threshold_sensitivity,max_f1,0.955,at threshold=0.40
+threshold_sensitivity,optimal_threshold,0.4,maximises F1 on validation blocks
+spatial_block_cv,mean_roc_auc,0.9888,48 blocks
+spatial_block_cv,min_roc_auc,0.9354,worst block
+spatial_block_cv,mean_f1,0.8324,48 blocks

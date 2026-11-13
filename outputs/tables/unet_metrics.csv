@@ -1,0 +1,3 @@
+experiment,n_bands,n_params,best_epoch,train_time_s,test_val_loss,test_precision,test_recall,test_f1,test_iou,test_overall_accuracy,spatial_cv_mean_f1,spatial_cv_min_f1
+full,28,1967697,36,4880.2,0.3088,0.7975,0.7863,0.7918,0.6554,0.9837,0.5673,0.0
+sar_only,5,1964385,26,2273.4,0.4377,0.7337,0.6335,0.6799,0.5151,0.9765,0.4219,0.0

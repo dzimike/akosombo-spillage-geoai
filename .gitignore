@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+*.egg-info/
+dist/
+build/
+
+# Environments
+.env
+.venv/
+env/
+venv/
+
+# Large data files
+data/raw/
+data/interim/
+data/processed/
+outputs/models/
+*.tif
+*.tiff
+*.vrt
+*.gpkg
+*.shp
+*.dbf
+*.shx
+*.prj
+*.cpg
+*.geojson
+*.parquet
+*.h5
+*.pt
+*.pth
+*.nc
+*.hdf5
+
+# Secrets and credentials
+*.json
+credentials/
+service-account*.json
+.earthengine/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Outputs (keep structure, exclude large files)
+outputs/maps/*.png
+outputs/figures/*.png
+outputs/figures/*.pdf
+outputs/dashboard/*.html
+outputs/manuscript/
+
+# Logs
+*.log
+
+# Local provenance copies of superseded results
+archive/
+logs/
+
+# Released data product (open data only)
+!release_data/
+!release_data/*.tif
+
+# Office lock files
+~$*

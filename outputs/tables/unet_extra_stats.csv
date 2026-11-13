@@ -1,0 +1,10 @@
+item,n_patches,flood_px,valid_px,flood_prevalence,all_flood_f1,class1_px,class2_px,class3_px,flood_km2_thr0.5,flood_km2_in_xgb_scored_domain,reference_km2
+patches_train,180.0,233830.0,10202283.0,0.022919379907418762,0.04481170336120355,148431.0,55467.0,29932.0,,,
+patches_validation,64.0,67862.0,3890855.0,0.017441410692508458,0.03428484531730861,31410.0,28160.0,8292.0,,,
+patches_test,56.0,135796.0,3448236.0,0.03938129524777306,0.07577834126481013,93390.0,10074.0,32332.0,,,
+scene_extent_XGBoost (raw score),,,,,,,,,108.8285,108.8285,44.2162
+scene_extent_XGBoost (prior-corrected),,,,,,,,,32.1766,32.1766,44.2162
+scene_extent_U-Net full,,,,,,,,,54.56,51.882,44.2162
+scene_extent_U-Net SAR only,,,,,,,,,47.0543,43.0036,44.2162
+scene_extent_U-Net optical only,,,,,,,,,40.8773,40.8128,44.2162
+scene_extent_U-Net terrain only,,,,,,,,,107.998,103.6901,44.2162

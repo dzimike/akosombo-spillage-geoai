@@ -1,0 +1,759 @@
+from __future__ import annotations
+"""
+DL Manuscript Figure Generator
+===============================
+Produces the seven publication figures for the U-Net ablation paper targeting
+ISPRS Journal of Photogrammetry and Remote Sensing.
+
+Figures produced (all → outputs/figures/dl_paper/ at 300 DPI)
+---------------------------------------------------------------
+fig2_unet_architecture.png     — U-Net encoder-decoder schematic
+fig3_loss_curves.png           — validation loss + F1 across training epochs
+fig4_f1_heatmaps.png           — patch-level F1 heatmaps (SAR-only, optical-only)
+fig5_probability_maps.png      — full-scene flood probability maps (3 experiments)
+fig6_pr_curves.png             — precision-recall curves for SAR-only / optical-only
+fig7_paradigm_diagram.png      — pixel-level vs patch-level training paradigm
+
+fig1_study_area_blocks.png is NOT produced by this module — it is generated
+by make_dl_fig1() in regenerate_24_figures.py (project root), which imports
+get_spatial_splits/block_to_utm/SPLIT_COLORS from this module. Run
+`python regenerate_24_figures.py` to regenerate fig1.
+
+Usage
+-----
+    python -m src.visualization.dl_figures
+    python -m src.visualization.dl_figures --only fig3 fig4
+"""
+
+import argparse
+import logging
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+import matplotlib.ticker as mticker
+import matplotlib.colors as mcolors
+from matplotlib.lines import Line2D
+import torch
+import rasterio
+from rasterio.windows import Window
+
+from src.utils.paths import get_project_root, get_output_path, ensure_dir
+from src.utils.logging_utils import Timer, log_run
+
+logging.basicConfig(level=logging.INFO,
+                    format="%(asctime)s %(levelname)s %(message)s")
+log = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# Constants
+# ---------------------------------------------------------------------------
+DPI          = 300
+PATCH_SIZE   = 256
+BLOCK_PX     = 1000
+RANDOM_SEED  = 42
+MIN_FLOOD_PX = 64
+
+# Experiment display names and palette (matches manuscript)
+from src.visualization.palette import MODEL as _MODEL, SPLIT as _SPLIT
+
+EXP_META = {
+    "full":         {"label": "Full (28 bands)",    "color": _MODEL["full"], "ls": "-"},
+    "sar_only":     {"label": "SAR-only (5 bands)",  "color": _MODEL["sar_only"], "ls": "-"},
+    "optical_only": {"label": "Optical-only (7 bands)", "color": _MODEL["optical_only"], "ls": "-"},
+    "terrain_only": {"label": "Terrain-only (21 bands)", "color": _MODEL["terrain_only"], "ls": "--"},
+}
+
+SPLIT_COLORS = dict(_SPLIT)
+
+
+# ---------------------------------------------------------------------------
+# Path helpers
+# ---------------------------------------------------------------------------
+
+def _proj() -> Path:
+    return get_project_root()
+
+def _maps_dir() -> Path:
+    return _proj() / "outputs" / "maps"
+
+def _models_dir() -> Path:
+    return _proj() / "outputs" / "models"
+
+def _tables_dir() -> Path:
+    return _proj() / "outputs" / "tables"
+
+def _out_dir() -> Path:
+    d = _proj() / "outputs" / "figures" / "dl_paper"
+    ensure_dir(d)
+    return d
+
+def _feat_path() -> Path:
+    return _proj() / "data/processed/features/flood_model_feature_stack.tif"
+
+def _label_path() -> Path:
+    return _proj() / "data/processed/flood_extent/fused_flood_confidence.tif"
+
+
+# ---------------------------------------------------------------------------
+# Block-partition reconstruction (mirrors train_unet.py exactly)
+# ---------------------------------------------------------------------------
+
+def get_spatial_splits(parquet_path: Path):
+    """Return (train_blocks, val_blocks, test_blocks) as sets of block_id strings."""
+    df = pd.read_parquet(parquet_path)
+    df["block_id"] = (
+        (df["pixel_row"] // BLOCK_PX).astype(str) + "_" +
+        (df["pixel_col"] // BLOCK_PX).astype(str)
+    )
+    rng    = np.random.default_rng(RANDOM_SEED)
+    blocks = df["block_id"].unique().tolist()   # plain list avoids Arrow shuffle warning
+    rng.shuffle(blocks)
+    n       = len(blocks)
+    n_train = int(n * 0.70)
+    n_val   = int(n * 0.15)
+    return (
+        set(blocks[:n_train]),
+        set(blocks[n_train:n_train + n_val]),
+        set(blocks[n_train + n_val:]),
+    )
+
+
+def block_to_utm(br: int, bc: int, transform) -> tuple[float, float, float, float]:
+    """Return (x0, y0, x1, y1) UTM bounds for block (br, bc)."""
+    x0 = transform.c + bc * BLOCK_PX * transform.a
+    y1 = transform.f + br * BLOCK_PX * transform.e          # e is negative
+    x1 = x0 + BLOCK_PX * transform.a
+    y0 = y1 + BLOCK_PX * transform.e
+    return x0, y0, x1, y1
+
+
+# ---------------------------------------------------------------------------
+# Figure 1 — Study area + spatial block partition
+#
+# NOTE: fig1 is generated by make_dl_fig1() in regenerate_24_figures.py (the
+# active, maintained implementation — Ghana inset, adjustText label
+# placement, no embedded title, AOI boundary in the legend). It imports
+# get_spatial_splits/block_to_utm/SPLIT_COLORS from this module to guarantee
+# the same block partition. Do not reintroduce a make_fig1() here — a
+# previous duplicate silently overwrote the correct figure with a stale,
+# unfixed version whenever this module's full pipeline ran without
+# `--only`. Run `python regenerate_24_figures.py` to regenerate fig1.
+# ---------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------
+# Figure 2 — U-Net architecture schematic
+# ---------------------------------------------------------------------------
+
+def make_fig2(out_path: Path) -> None:
+    log.info("Figure 2: U-Net architecture schematic…")
+
+    fig, ax = plt.subplots(figsize=(12, 5.5), dpi=DPI)
+    ax.set_xlim(0, 12)
+    ax.set_ylim(0, 5.5)
+    ax.axis("off")
+
+    enc_color = "#1565C0"   # blue — encoder
+    dec_color = "#C62828"   # red  — decoder
+    btn_color = "#4A148C"   # purple — bottleneck
+    skip_color = "#757575"  # grey — skip connections
+    head_color = "#2E7D32"  # green — output head
+
+    def box(ax, x, y, w, h, label, sublabel="", fc="#BBDEFB", ec="#0D47A1", fs=7):
+        rect = mpatches.FancyBboxPatch(
+            (x - w / 2, y - h / 2), w, h,
+            boxstyle="round,pad=0.04", facecolor=fc, edgecolor=ec, linewidth=1.2,
+        )
+        ax.add_patch(rect)
+        ax.text(x, y + 0.08, label, ha="center", va="center", fontsize=fs,
+                fontweight="bold", color="white")
+        if sublabel:
+            ax.text(x, y - 0.22, sublabel, ha="center", va="center", fontsize=5.5,
+                    color="white", style="italic")
+
+    def arrow(ax, x0, y0, x1, y1, color="#555555", style="->"):
+        ax.annotate("", xy=(x1, y1), xytext=(x0, y0),
+                    arrowprops=dict(arrowstyle=style, color=color, lw=1.2))
+
+    def skip_arrow(ax, x_enc, x_dec, y):
+        ax.annotate("", xy=(x_dec - 0.28, y), xytext=(x_enc + 0.28, y),
+                    arrowprops=dict(arrowstyle="->", color=skip_color, lw=1.0,
+                                   connectionstyle="arc3,rad=0.0",
+                                   linestyle="dashed"))
+        ax.text((x_enc + x_dec) / 2, y + 0.18, "skip concat",
+                ha="center", va="bottom", fontsize=4.5, color=skip_color)
+
+    bw, bh = 1.05, 0.55
+
+    # ---- Encoder levels (left column, top to bottom) ----
+    enc_x   = [1.4, 1.4, 1.4, 1.4]
+    enc_y   = [4.8, 3.8, 2.8, 1.8]
+    enc_res = ["256×256", "128×128", "64×64", "32×32"]
+    enc_ch  = ["→  16ch", "→  32ch", "→  64ch", "→ 128ch"]
+    enc_labels = ["DoubleConv\n+ MaxPool", "DoubleConv\n+ MaxPool",
+                  "DoubleConv\n+ MaxPool", "DoubleConv\n+ MaxPool"]
+
+    for i, (x, y, res, ch) in enumerate(zip(enc_x, enc_y, enc_res, enc_ch)):
+        box(ax, x, y, bw, bh, f"Encoder {i+1}", f"{res}  {ch}",
+            fc=enc_color, ec="#0D47A1")
+        if i < 3:
+            arrow(ax, x, y - bh / 2, x, enc_y[i + 1] + bh / 2)
+
+    # Input arrow
+    ax.annotate("", xy=(enc_x[0], enc_y[0] + bh / 2 + 0.05),
+                xytext=(enc_x[0], enc_y[0] + bh / 2 + 0.55),
+                arrowprops=dict(arrowstyle="->", color="black", lw=1.2))
+    ax.text(enc_x[0], enc_y[0] + bh / 2 + 0.65,
+            "Input\n5–28 bands\n256×256",
+            ha="center", va="bottom", fontsize=6)
+
+    # ---- Bottleneck ----
+    btn_x, btn_y = 6.0, 0.9
+    box(ax, btn_x, btn_y, 1.3, bh, "Bottleneck", "16×16  → 256ch",
+        fc=btn_color, ec="#4A148C")
+    arrow(ax, enc_x[3], enc_y[3] - bh / 2, btn_x, btn_y + bh / 2)
+
+    # ---- Decoder levels (right column, bottom to top) ----
+    dec_x   = [10.6, 10.6, 10.6, 10.6]
+    dec_y   = [1.8, 2.8, 3.8, 4.8]
+    dec_res = ["32×32", "64×64", "128×128", "256×256"]
+    dec_ch  = ["→ 128ch", "→  64ch", "→  32ch", "→  16ch"]
+
+    for i, (x, y, res, ch) in enumerate(zip(dec_x, dec_y, dec_res, dec_ch)):
+        box(ax, x, y, bw, bh, f"Decoder {i+1}", f"{res}  {ch}",
+            fc=dec_color, ec="#B71C1C")
+        if i < 3:
+            arrow(ax, x, y + bh / 2, x, dec_y[i + 1] - bh / 2)
+
+    # Arrow from bottleneck to first decoder
+    arrow(ax, btn_x, btn_y + bh / 2, dec_x[0], dec_y[0] - bh / 2,
+          color=btn_color)
+
+    # ---- Skip connections ----
+    for i, (ey, dy) in enumerate(zip(enc_y, reversed(dec_y))):
+        skip_arrow(ax, enc_x[i] + bw / 2, dec_x[3 - i] - bw / 2, ey)
+
+    # ---- Output head ----
+    head_x, head_y = 10.6, 5.55
+    box(ax, head_x, head_y, 1.0, 0.45, "1×1 Conv", "logit → sigmoid",
+        fc=head_color, ec="#1B5E20", fs=6.5)
+    arrow(ax, dec_x[3], dec_y[3] + bh / 2, head_x, head_y - 0.225)
+
+    # Output label
+    ax.text(head_x, head_y + 0.38, "Flood probability\n(1×256×256)",
+            ha="center", va="bottom", fontsize=6)
+
+    # ---- Bilinear upsample labels ----
+    for i, (x, y) in enumerate(zip(dec_x, dec_y)):
+        ax.text(x, y - bh / 2 - 0.14, "↑ 2× bilinear",
+                ha="center", va="top", fontsize=4.5, color="#C62828")
+
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=DPI, bbox_inches="tight")
+    plt.close(fig)
+    log.info("  Saved: %s", out_path)
+
+
+# ---------------------------------------------------------------------------
+# Figure 3 — Validation loss + F1 curves
+# ---------------------------------------------------------------------------
+
+def make_fig3(out_path: Path) -> None:
+    log.info("Figure 3: training curves…")
+
+    histories = {}
+    for exp in EXP_META:
+        pt = _models_dir() / f"unet_{exp}.pt"
+        if not pt.exists():
+            log.warning("  Bundle not found: %s", pt)
+            continue
+        bundle = torch.load(pt, map_location="cpu", weights_only=False)
+        histories[exp] = bundle.get("history", [])
+
+    if not histories:
+        log.warning("  No bundles found; skipping Fig 3")
+        return
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(9, 3.8), dpi=DPI)
+
+    for exp, hist in histories.items():
+        m     = EXP_META[exp]
+        epochs     = [h["epoch"] for h in hist]
+        val_loss   = [h["val_loss"] for h in hist]
+        val_f1     = [h["f1"] for h in hist]
+        best_idx   = min(range(len(val_loss)), key=lambda i: val_loss[i])
+        best_ep    = epochs[best_idx]
+        stop_ep    = epochs[-1]
+
+        ax1.plot(epochs, val_loss, color=m["color"], ls=m["ls"],
+                 lw=1.5, label=m["label"])
+        ax2.plot(epochs, val_f1,   color=m["color"], ls=m["ls"],
+                 lw=1.5, label=m["label"])
+
+        # Mark best epoch
+        ax1.axvline(best_ep, color=m["color"], lw=0.6, alpha=0.4, ls=":")
+        ax2.axvline(best_ep, color=m["color"], lw=0.6, alpha=0.4, ls=":")
+
+        # Star at best F1
+        best_f1 = val_f1[best_idx]
+        ax2.plot(best_ep, best_f1, "*", color=m["color"], ms=8, zorder=5)
+
+    for ax, ylabel in [(ax1, "Validation loss"), (ax2, "Validation F1")]:
+        ax.set_xlabel("Epoch", fontsize=8)
+        ax.set_ylabel(ylabel, fontsize=8)
+        ax.tick_params(labelsize=7)
+        ax.grid(True, lw=0.4, alpha=0.4)
+        ax.spines[["top", "right"]].set_visible(False)
+
+    ax2.legend(fontsize=6.5, loc="lower right", framealpha=0.85)
+    # Add note about best-checkpoint stars
+    ax2.text(0.02, 0.97, "★ best checkpoint epoch",
+             transform=ax2.transAxes, fontsize=5.5, va="top", color="#555555")
+
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=DPI, bbox_inches="tight")
+    plt.close(fig)
+    log.info("  Saved: %s", out_path)
+
+
+# ---------------------------------------------------------------------------
+# Figure 4 — Patch-level F1 heat maps (block-level mean)
+# ---------------------------------------------------------------------------
+
+def make_fig4(out_path: Path) -> None:
+    log.info("Figure 4: F1 heatmaps…")
+
+    exps_to_show = ["sar_only", "optical_only"]
+    dfs = {}
+    for exp in exps_to_show:
+        csv = _tables_dir() / f"unet_{exp}_spatial_cv.csv"
+        if not csv.exists():
+            log.warning("  Spatial CV CSV not found: %s", csv)
+            return
+        dfs[exp] = pd.read_csv(csv)
+
+    # Raster geometry (to know grid extent)
+    with rasterio.open(_label_path()) as src:
+        H, W = src.height, src.width
+        tfm  = src.transform
+
+    max_br = (H - 1) // BLOCK_PX
+    max_bc = (W - 1) // BLOCK_PX
+
+    fig, axes = plt.subplots(1, 2, figsize=(10, 5.5), dpi=DPI)
+    cmap = plt.get_cmap("YlGnBu").copy()
+    cmap.set_bad("#CCCCCC")
+
+    for ax, exp in zip(axes, exps_to_show):
+        df = dfs[exp]
+        # Mean F1 per block
+        block_f1 = df.groupby("block_id")["f1"].mean()
+
+        # Build grid
+        grid = np.full((max_br + 1, max_bc + 1), np.nan)
+        for bid, f1 in block_f1.items():
+            parts = str(bid).split("_")
+            if len(parts) == 2:
+                br, bc = int(parts[0]), int(parts[1])
+                if 0 <= br <= max_br and 0 <= bc <= max_bc:
+                    grid[br, bc] = f1
+
+        im = ax.imshow(grid, cmap=cmap, vmin=0, vmax=1,
+                       origin="upper", interpolation="none",
+                       extent=[0, (max_bc + 1) * 10, (max_br + 1) * 10, 0])
+
+        # Annotate non-NaN cells with their mean F1
+        for br in range(max_br + 1):
+            for bc in range(max_bc + 1):
+                if not np.isnan(grid[br, bc]):
+                    ax.text((bc + 0.5) * 10, (br + 0.5) * 10,
+                            f"{grid[br, bc]:.2f}",
+                            ha="center", va="center", fontsize=6.5,
+                            color="white" if grid[br, bc] > 0.6 else "black",
+                            fontweight="bold")
+
+        # Grid lines
+        for i in range(max_bc + 2):
+            ax.axvline(i * 10, color="white", lw=0.5, alpha=0.6)
+        for j in range(max_br + 2):
+            ax.axhline(j * 10, color="white", lw=0.5, alpha=0.6)
+
+        plt.colorbar(im, ax=ax, label="Mean patch F1", fraction=0.04, pad=0.03)
+        m = EXP_META[exp]
+        ax.set_title(m["label"], fontsize=9, fontweight="bold", pad=6, color=m["color"])
+        ax.set_xlabel("Column position (km)", fontsize=7)
+        ax.set_ylabel("Row position (km)",    fontsize=7)
+        ax.tick_params(labelsize=6)
+
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=DPI, bbox_inches="tight")
+    plt.close(fig)
+    log.info("  Saved: %s", out_path)
+
+
+# ---------------------------------------------------------------------------
+# Figure 5 — Full-scene probability maps
+# ---------------------------------------------------------------------------
+
+def make_fig5(out_path: Path) -> None:
+    log.info("Figure 5: probability maps…")
+
+    exps_to_show = ["full", "sar_only", "optical_only"]
+    prob_paths   = {e: _maps_dir() / f"unet_{e}_flood_prob.tif" for e in exps_to_show}
+
+    missing = [e for e, p in prob_paths.items() if not p.exists()]
+    if missing:
+        log.warning("  Probability maps missing for: %s", missing)
+        return
+
+    scale = 10   # read at 1/10 resolution
+    # permanent water (class 4) is not part of the flood task; mask it in the maps
+    with rasterio.open(_label_path()) as lsrc:
+        perm = lsrc.read(1, out_shape=(lsrc.height // scale, lsrc.width // scale),
+                         resampling=rasterio.enums.Resampling.mode) == 4
+
+    # Reserve a narrow strip on the right for the colorbar via subplots_adjust;
+    # do NOT use tight_layout() — it conflicts with colorbar axes placement.
+    fig, axes = plt.subplots(1, 3, figsize=(14, 6), dpi=DPI)
+    fig.subplots_adjust(left=0.05, right=0.87, top=0.88, bottom=0.08,
+                        wspace=0.10)
+
+    for ax, exp in zip(axes, exps_to_show):
+        p = prob_paths[exp]
+        with rasterio.open(p) as src:
+            H, W = src.height, src.width
+            prob = src.read(1, out_shape=(H // scale, W // scale),
+                            resampling=rasterio.enums.Resampling.average)
+            left, bottom, right, top = src.bounds
+        prob = np.where(perm, np.nan, prob)
+
+        im = ax.imshow(np.ma.masked_invalid(prob), cmap="YlGnBu", vmin=0, vmax=1,
+                       extent=[left, right, bottom, top],
+                       origin="upper", interpolation="bilinear", aspect="auto")
+
+        # 0.5 threshold contour
+        ax.contour(np.nan_to_num(prob, nan=0.0), levels=[0.5], colors=["black"], linewidths=0.6,
+                   extent=[left, right, bottom, top], origin="upper")
+
+        m = EXP_META[exp]
+        ax.set_title(m["label"], fontsize=9, fontweight="bold", pad=5, color=m["color"])
+        ax.tick_params(labelsize=5)
+        ax.xaxis.set_major_formatter(
+            mticker.FuncFormatter(lambda x, _: f"{x/1e3:.0f}"))
+        ax.yaxis.set_major_formatter(
+            mticker.FuncFormatter(lambda y, _: f"{y/1e3:.0f}"))
+        ax.set_xlabel("Easting (km, UTM 30N)", fontsize=6)
+        ax.set_ylabel("Northing (km, UTM 30N)", fontsize=6)
+
+    # Colorbar in an explicit axes to the right of all panels — avoids the
+    # tight_layout conflict that pushes the bar inside the last subplot.
+    cbar_ax = fig.add_axes([0.89, 0.10, 0.016, 0.72])
+    cbar = fig.colorbar(im, cax=cbar_ax)
+    cbar.set_label("Flood probability", fontsize=7)
+    cbar.ax.tick_params(labelsize=6)
+
+    # Footnote
+    fig.text(0.46, 0.01, "Black contour = 0.5 decision threshold; permanent water (incl. open sea) masked",
+             ha="center", fontsize=6.5, color="#444444")
+
+    fig.savefig(out_path, dpi=DPI, bbox_inches="tight")
+    plt.close(fig)
+    log.info("  Saved: %s", out_path)
+
+
+# ---------------------------------------------------------------------------
+# Figure 6 — Precision-recall curves
+# ---------------------------------------------------------------------------
+
+def _collect_test_probs(exp: str, test_blocks: set) -> tuple[np.ndarray, np.ndarray]:
+    """
+    Read test-partition patches from probability map and label raster.
+    Returns (y_prob, y_true) as 1-D arrays of all test-patch pixel values.
+    """
+    prob_path = _maps_dir() / f"unet_{exp}_flood_prob.tif"
+    if not prob_path.exists():
+        return np.array([]), np.array([])
+
+    all_prob, all_true = [], []
+
+    with rasterio.open(prob_path) as psrc, rasterio.open(_label_path()) as lsrc:
+        H, W = lsrc.height, lsrc.width
+        for r0 in range(0, H - PATCH_SIZE + 1, PATCH_SIZE):
+            for c0 in range(0, W - PATCH_SIZE + 1, PATCH_SIZE):
+                cr  = (r0 + PATCH_SIZE // 2) // BLOCK_PX
+                cc  = (c0 + PATCH_SIZE // 2) // BLOCK_PX
+                bid = f"{cr}_{cc}"
+                if bid not in test_blocks:
+                    continue
+                win  = Window(c0, r0, PATCH_SIZE, PATCH_SIZE)
+                lbl  = lsrc.read(1, window=win).astype(np.float32)
+                # flood = classes 1-3; permanent water (class 4) is excluded from the
+                # evaluation, as in training
+                mask = (lbl != 255) & (lbl != 4)
+                if not mask.any():
+                    continue
+                y_true = np.where((lbl >= 1) & (lbl <= 3), 1.0, 0.0)[mask]
+                if y_true.sum() < MIN_FLOOD_PX:
+                    continue
+                prob = psrc.read(1, window=win).astype(np.float32)[mask]
+                all_prob.append(prob)
+                all_true.append(y_true)
+
+    if not all_prob:
+        return np.array([]), np.array([])
+    return np.concatenate(all_prob), np.concatenate(all_true)
+
+
+def make_fig6(out_path: Path) -> None:
+    log.info("Figure 6: precision-recall curves…")
+
+    parquet_path = _proj() / "data/processed/features/model_training_samples.parquet"
+    _, _, test_b = get_spatial_splits(parquet_path)
+
+    thresholds = np.linspace(0.1, 0.9, 17)
+    exps_to_show = ["sar_only", "optical_only", "full"]
+
+    fig, (ax_pr, ax_f1) = plt.subplots(1, 2, figsize=(9, 4), dpi=DPI)
+
+    for exp in exps_to_show:
+        log.info("  Computing PR for %s…", exp)
+        m = EXP_META[exp]
+
+        y_prob, y_true = _collect_test_probs(exp, test_b)
+        if y_prob.size == 0:
+            log.warning("  No test patches found for %s", exp)
+            continue
+
+        prevalence = float(y_true.mean())   # pooled flood prevalence of the test patches
+        precs, recs, f1s = [], [], []
+        for thr in thresholds:
+            y_hat = (y_prob >= thr).astype(float)
+            tp = ((y_hat == 1) & (y_true == 1)).sum()
+            fp = ((y_hat == 1) & (y_true == 0)).sum()
+            fn = ((y_hat == 0) & (y_true == 1)).sum()
+            p  = tp / (tp + fp + 1e-9)
+            r  = tp / (tp + fn + 1e-9)
+            f  = 2 * p * r / (p + r + 1e-9)
+            precs.append(p); recs.append(r); f1s.append(f)
+
+        # PR curve
+        ax_pr.plot(recs, precs, color=m["color"], ls=m["ls"], lw=1.8,
+                   label=m["label"])
+        # Mark 0.5 threshold point
+        idx05 = np.argmin(np.abs(thresholds - 0.5))
+        ax_pr.plot(recs[idx05], precs[idx05], "o", color=m["color"],
+                   ms=7, zorder=5)
+
+        # F1 vs threshold
+        ax_f1.plot(thresholds, f1s, color=m["color"], ls=m["ls"], lw=1.8,
+                   label=m["label"])
+        ax_f1.plot(thresholds[idx05], f1s[idx05], "o", color=m["color"],
+                   ms=7, zorder=5)
+
+    # No-skill baseline
+    ax_pr.plot([0, 1], [prevalence, prevalence], "k--", lw=0.8, alpha=0.5, label=f"No skill ({prevalence:.2f})")
+
+    ax_pr.set_xlim(0.0, 1.0); ax_pr.set_ylim(0.0, 1.0)
+    ax_pr.set_xlabel("Recall",    fontsize=8)
+    ax_pr.set_ylabel("Precision", fontsize=8)
+    ax_pr.legend(fontsize=6.5, loc="lower left", framealpha=0.85)
+    ax_pr.grid(True, lw=0.4, alpha=0.4)
+    ax_pr.spines[["top", "right"]].set_visible(False)
+
+    ax_f1.set_xlim(0.1, 0.9)
+    ax_f1.set_ylim(0.3, 1.0)
+    ax_f1.set_xlabel("Decision threshold", fontsize=8)
+    ax_f1.set_ylabel("F1 score",           fontsize=8)
+    ax_f1.legend(fontsize=6.5, loc="center right", framealpha=0.85)
+    ax_f1.grid(True, lw=0.4, alpha=0.4)
+    ax_f1.spines[["top", "right"]].set_visible(False)
+    ax_f1.axvline(0.5, color="grey", lw=0.8, ls="--", alpha=0.7)
+
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=DPI, bbox_inches="tight")
+    plt.close(fig)
+    log.info("  Saved: %s", out_path)
+
+
+# ---------------------------------------------------------------------------
+# Figure 7 — Pixel-level vs patch-level training paradigm
+# ---------------------------------------------------------------------------
+
+def make_fig7(out_path: Path) -> None:
+    log.info("Figure 7: paradigm diagram…")
+
+    fig, (ax_xgb, ax_unet) = plt.subplots(1, 2, figsize=(10, 6.2), dpi=DPI)
+
+    GRID_R = 9
+    GRID_C = 7
+    SPLIT_MAP = {}
+
+    # Actual block partition used by every model (same function as training)
+    tr_b, va_b, te_b = get_spatial_splits(_proj() / "data/processed/features/model_training_samples.parquet")
+    for b in tr_b: SPLIT_MAP[b] = "train"
+    for b in va_b: SPLIT_MAP[b] = "val"
+    for b in te_b: SPLIT_MAP[b] = "test"
+    N_TR, N_VA, N_TE = len(tr_b), len(va_b), len(te_b)
+    # sample / patch counts of the training partition, read from the data (not hard-coded)
+    _df = pd.read_parquet(_proj() / "data/processed/features/model_training_samples.parquet", columns=["pixel_row", "pixel_col"])
+    _bid = (_df["pixel_row"] // BLOCK_PX).astype(str) + "_" + (_df["pixel_col"] // BLOCK_PX).astype(str)
+    N_SAMPLES_TR = int(_bid.isin(tr_b).sum())
+    from src.models.train_unet import FloodPatchDataset
+    N_PATCH_TR = len(FloodPatchDataset(_feat_path(), _label_path(), tr_b, list(range(28))))
+
+    # --- XGBoost panel ---
+    for r in range(GRID_R):
+        for c in range(GRID_C):
+            bid   = f"{r}_{c}"
+            split = SPLIT_MAP.get(bid, "train")
+            fc    = mcolors.to_rgba(SPLIT_COLORS[split], 0.4)
+            rect  = mpatches.Rectangle(
+                (c, GRID_R - r - 1), 1, 1,
+                facecolor=fc, edgecolor="white", linewidth=1.0,
+            )
+            ax_xgb.add_patch(rect)
+            if split == "train":
+                # Scatter pixel sample dots inside block
+                np_samples = 12
+                xs = c + np.random.default_rng(r * GRID_C + c).uniform(0.1, 0.9, np_samples)
+                ys = (GRID_R - r - 1) + np.random.default_rng(r * GRID_C + c + 99).uniform(0.1, 0.9, np_samples)
+                ax_xgb.scatter(xs, ys, s=4, color=_MODEL["xgboost"], zorder=3, alpha=0.7)
+
+    ax_xgb.set_xlim(0, GRID_C); ax_xgb.set_ylim(0, GRID_R)
+    ax_xgb.set_aspect("equal")
+    ax_xgb.axis("off")
+    ax_xgb.set_title("XGBoost — pixel-level training", fontsize=9,
+                     fontweight="bold", color=_MODEL["xgboost"], pad=10)
+
+    # Annotation below panel — use figure-fraction x so text stays inside its
+    # own half and cannot bleed into the neighbouring panel.
+    fig.text(0.25, 0.06, f"{N_SAMPLES_TR:,} training samples\n({N_TR} blocks × ~{N_SAMPLES_TR // max(N_TR, 1):,} samples/block)",
+             ha="center", va="center", fontsize=7, color=_MODEL["xgboost"],
+             bbox=dict(boxstyle="round,pad=0.35", fc="#EEEEEE", ec=_MODEL["xgboost"], lw=0.8))
+
+    # --- U-Net panel ---
+    PATCH_REL = 0.42   # patch size as fraction of one block side
+
+    for r in range(GRID_R):
+        for c in range(GRID_C):
+            bid   = f"{r}_{c}"
+            split = SPLIT_MAP.get(bid, "train")
+            fc    = mcolors.to_rgba(SPLIT_COLORS[split], 0.4)
+            rect  = mpatches.Rectangle(
+                (c, GRID_R - r - 1), 1, 1,
+                facecolor=fc, edgecolor="white", linewidth=1.0,
+            )
+            ax_unet.add_patch(rect)
+            if split == "train":
+                # Show patch tiles inside block
+                for pi, (px, py) in enumerate([(0.05, 0.52), (0.52, 0.52),
+                                               (0.05, 0.05), (0.52, 0.05)]):
+                    patch_rect = mpatches.Rectangle(
+                        (c + px, GRID_R - r - 1 + py),
+                        PATCH_REL, PATCH_REL,
+                        facecolor=mcolors.to_rgba(_MODEL["full"], 0.55),
+                        edgecolor=_MODEL["full"], linewidth=0.8,
+                    )
+                    ax_unet.add_patch(patch_rect)
+
+    ax_unet.set_xlim(0, GRID_C); ax_unet.set_ylim(0, GRID_R)
+    ax_unet.set_aspect("equal")
+    ax_unet.axis("off")
+    ax_unet.set_title("U-Net — patch-level training", fontsize=9,
+                      fontweight="bold", color=_MODEL["full"], pad=10)
+    fig.text(0.75, 0.06, f"{N_PATCH_TR} patches\n(~{N_PATCH_TR / max(N_TR, 1):.1f} per block; 2.56 km autocorrelation radius)",
+             ha="center", va="center", fontsize=7, color=_MODEL["full"],
+             bbox=dict(boxstyle="round,pad=0.35", fc="#E3F4EC", ec=_MODEL["full"], lw=0.8))
+
+    # Legend placed below the annotation boxes with enough vertical clearance
+    legend_handles = [
+        mpatches.Patch(facecolor=mcolors.to_rgba(SPLIT_COLORS["train"], 0.5),
+                       edgecolor="white", label=f"Training blocks ({N_TR})"),
+        mpatches.Patch(facecolor=mcolors.to_rgba(SPLIT_COLORS["val"], 0.5),
+                       edgecolor="white", label=f"Validation blocks ({N_VA})"),
+        mpatches.Patch(facecolor=mcolors.to_rgba(SPLIT_COLORS["test"], 0.5),
+                       edgecolor="white", label=f"Test blocks ({N_TE})"),
+        Line2D([0], [0], marker="o", color="w", markerfacecolor=_MODEL["xgboost"],
+               markersize=5, label="Pixel sample (XGBoost)"),
+        mpatches.Patch(facecolor=mcolors.to_rgba(_MODEL["full"], 0.55),
+                       edgecolor=_MODEL["full"], label="Patch tile (U-Net)"),
+    ]
+    fig.legend(handles=legend_handles, loc="lower center", ncol=5,
+               fontsize=6.5, framealpha=0.9, bbox_to_anchor=(0.5, 0.00))
+
+    fig.subplots_adjust(left=0.03, right=0.97, top=0.92, bottom=0.17,
+                        wspace=0.06)
+    fig.savefig(out_path, dpi=DPI, bbox_inches="tight")
+    plt.close(fig)
+    log.info("  Saved: %s", out_path)
+
+
+# ---------------------------------------------------------------------------
+# Dispatch table
+# ---------------------------------------------------------------------------
+
+FIGURES = {
+    # fig1 intentionally omitted — generated by make_dl_fig1() in
+    # regenerate_24_figures.py; see the note above make_fig2 below.
+    "fig2": (make_fig2, "fig2_unet_architecture"),
+    "fig3": (make_fig3, "fig3_loss_curves"),
+    "fig4": (make_fig4, "fig4_f1_heatmaps"),
+    "fig5": (make_fig5, "fig5_probability_maps"),
+    "fig6": (make_fig6, "fig6_pr_curves"),
+    "fig7": (make_fig7, "fig7_paradigm_diagram"),
+}
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+def main(only: list[str] | None = None) -> None:
+    out = _out_dir()
+    targets = only if only else list(FIGURES.keys())
+
+    import os
+    os.chdir(_proj())   # ensure relative data paths resolve
+
+    with Timer() as t:
+        for key in targets:
+            if key not in FIGURES:
+                log.warning("Unknown figure key: %s (choices: %s)", key,
+                            list(FIGURES.keys()))
+                continue
+            fn, stem = FIGURES[key]
+            path = out / f"{stem}.png"
+            try:
+                fn(path)   # type: ignore[operator]
+            except Exception as exc:
+                log.error("  Figure %s failed: %s", key, exc, exc_info=True)
+
+    log_run(
+        script=__file__,
+        input_paths=[
+            str(_models_dir()),
+            str(_tables_dir()),
+            str(_maps_dir()),
+        ],
+        output_paths=[str(out)],
+        parameters={"figures": targets},
+        status="success",
+        runtime_seconds=t.elapsed,
+    )
+    log.info("All figures complete in %.1f s → %s", t.elapsed, out)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Generate DL manuscript figures (Figures 1-7)")
+    parser.add_argument(
+        "--only", nargs="+", metavar="fig1",
+        help="Generate only the specified figure keys (e.g. --only fig3 fig4)",
+    )
+    args = parser.parse_args()
+    main(args.only)

@@ -1,0 +1,5 @@
+extent,area_km2,buildings,roads_km,people
+our primary fused extent,42.8287,59,11.324055785711442,5339.6708984375
+UNOSAT FloodExtent (23 Oct 2023),51.9823,61,25.329048544599566,8290.41796875
+change rule: dVV and dVH < -3 dB (23 Oct),48.4498,30,16.601826344584016,7089.8583984375
+our open-water rule on the 23 Oct scene,72.5103,116,9.704325818869947,8661.1171875
