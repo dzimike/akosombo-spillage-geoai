@@ -2,13 +2,13 @@ from __future__ import annotations
 """
 Case-study figure: four places, four chips each.
 
-A  Mepe: what 10 m data cannot see (WorldView-2 flagged buildings vs Sentinel-2, Sentinel-1 change and our extent)
+A  Mepe: what 10 m data cannot see (Charter-flagged buildings vs Sentinel-2, Sentinel-1 change and our extent)
 B  Ningo-Prampram: the seasonal scatter of the event-window definition (extent outlines and per-date flags)
 C  Songor lagoon margin: remaining unconfirmed patches (Sentinel-2 true colour, UNOSAT outline)
 D  River bars in the TerraSAR-X sector: agreement (Sentinel-2, change, agreement map)
 
-Imagery: Sentinel-1 and Sentinel-2 (Copernicus); WorldView-2 view in A1 is cropped from the International Charter map
-(activation 844, NASRDA, 21 Oct 2023).
+Imagery: Sentinel-1 and Sentinel-2 (Copernicus); building flags in A are the analyst flags of the International Charter map
+(activation 844, NASRDA, 21 Oct 2023), drawn here as footprints, not reproduced imagery.
 """
 import logging
 import textwrap
@@ -97,15 +97,10 @@ def main() -> None:
     fx0, fy0 = tf_.transform(0.4145, 6.0642); fx1, fy1 = tf_.transform(0.4444, 6.0862)
     wn = Win(ref, (round(fx0 / 1000 + 0.1, 2), round(fy0 / 1000 + 0.1, 2), round(fx1 / 1000 - 0.1, 2), round(fy1 / 1000 - 0.1, 2)))
     ax = [fig.add_subplot(gs[0, j]) for j in range(1, 5)]
-    img = np.array(Image.open(root / "data/raw/validation/charter844/img_28582238.jpg").convert("RGB"))
-    t = Transformer.from_crs(crs, 4326, always_xy=True)
-    (lo0, la0), (lo1, la1) = t.transform(wn.box[0], wn.box[3]), t.transform(wn.box[2], wn.box[1])
-    px = lambda lo, la: (581.5 + (lo - 25 / 60) * 2579 * 60, 771.5 + (6 + 5 / 60 - la) * 2576 * 60)
-    (x0, y0), (x1, y1) = px(lo0, la0), px(lo1, la1)
-    ax[0].imshow(img[int(y0):int(y1), int(x0):int(x1)], extent=wn.ext)
-    base(ax[0], "WorldView-2 (Charter map); flagged: orange", wn)
     flag = mb[mb.charter_affected]
     flag = flag.set_geometry(flag.geometry.scale(1 / 1000, 1 / 1000, origin=(0, 0)))
+    other = mb[~mb.charter_affected]
+    other = other.set_geometry(other.geometry.scale(1 / 1000, 1 / 1000, origin=(0, 0)))
     rgbE = rgb([wn.read(sat / "s2_rgb_event.tif", i) for i in (1, 2, 3)])
     fu = wn.read(new_p); newm = np.isin(fu, [1, 2, 3])
     for a, (arr, ttl, kw) in zip(ax[1:], ((rgbE, "Sentinel-2 true colour, event composite", {}),
@@ -115,6 +110,14 @@ def main() -> None:
         base(a, ttl, wn)
         flag.boundary.plot(ax=a, color=FLAG_C, linewidth=0.4)
         a.set_xlim(wn.ext[0], wn.ext[1]); a.set_ylim(wn.ext[2], wn.ext[3])
+    ax[0].imshow(np.where(newm, 1.0, np.nan), extent=wn.ext, cmap=ListedColormap([CHANGE_C]), alpha=0.35, interpolation="nearest")
+    other.plot(ax=ax[0], color="#9A9A9A", linewidth=0)
+    flag.plot(ax=ax[0], color=FLAG_C, edgecolor=FLAG_C, linewidth=0.5)
+    outline(ax[0], wn, newm, CHANGE_C, 0.7)
+    base(ax[0], "Building footprints; flagged flooded in orange", wn)
+    ax[0].set_xlim(wn.ext[0], wn.ext[1]); ax[0].set_ylim(wn.ext[2], wn.ext[3])
+    ax[0].legend(handles=[mp.Patch(color=FLAG_C, label=f"flagged flooded ({len(flag)})"), mp.Patch(color="#9A9A9A", label="other buildings"),
+                          Line2D([0], [0], color=CHANGE_C, label="our extent")], loc="lower left", fontsize=5.2, framealpha=0.9)
     outline(ax[3], wn, newm, CHANGE_C, 0.7)
     ax[3].text(0.5, 0.04, f"our extent in view: {newm.sum() / 1e4:.2f} km²", transform=ax[3].transAxes, ha="center", fontsize=5.3,
                bbox=dict(fc="white", ec="none", alpha=0.85))

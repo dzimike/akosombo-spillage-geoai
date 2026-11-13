@@ -124,8 +124,7 @@ def main() -> None:
         "The independent products are analyst-derived, disagree with one another, and are not field data; the paper treats them as comparisons, not ground truth.",
         "The topic fits Natural Hazards: remote-sensing hazard mapping and exposure assessment for a human-induced flood hazard in West Africa.",
         "Transparency on related work, as the guidelines ask: two further manuscripts use the same flood map. One reports a machine-learning classifier trained on labels derived from it, and one reports how the classifier threshold "
-        "and the flood definition propagate into exposure [status of each to be stated by the authors]. They report different analyses and results, and neither is published. "
-        "Fig. 5a (Mepe) reproduces a crop of an International Charter WorldView-2 map; [the authors to state that permission was obtained, or that the panel was replaced].",
+        "and the flood definition propagate into exposure [status of each to be stated by the authors]. They report different analyses and results, and neither is published.",
         "This manuscript is not under consideration elsewhere and has not been published, and all authors have approved the submission [the authors to confirm]. "
         "Code and the derived flood map are at https://github.com/dzimike/akosombo-spillage-geoai.",
         "Suggested reviewers (institutional e-mail addresses required): [to be added by the authors]. Reviewers to exclude: [optional].",
@@ -146,8 +145,7 @@ Generated {datetime.date.today()} by src/submission/build_springer_package.py fr
 - Author names, affiliations, ORCID iDs, corresponding-author name (title page, cover letter).
 - Author-contribution statement (placeholder in 'Statements and Declarations'). Funding and competing-interests statements say there is nothing to declare.
 - **Primary citation for the 24 designated communities** (NADMO/VRA document: issuer, title, date, URL). Section 2 still carries a bracketed placeholder.
-- **Permission for Fig. 5a**: it contains a crop of a Charter WorldView-2 map (NASRDA). The guidelines require evidence of permission for material
-  published elsewhere. If permission is not obtained, replace panel a with a schematic or drop it (and the Section 5.4 text that cites Fig. 5a).
+- Fig. 5a no longer reproduces Charter imagery: it draws the 179 analyst-flagged buildings as footprints on a map of our extent, so no permission is needed for it (the Charter products are cited in Methods).
 - Companion-manuscript status (cover letter), suggested reviewers with institutional e-mail addresses.
 - The VRA 2023 Annual Report was not found online; if you have it, cite it in Section 3.1 and check the peak-release date.
 - Confirm the repository DOI/version: create the v1.0.0 tag, or deposit on Zenodo and cite the DOI.

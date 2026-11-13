@@ -12,7 +12,8 @@ Rules applied come from each journal's author guidelines, read on 2026-10-20:
             figure captions; any consistent reference style; figures at 300 dpi (colour) at final size; funding, disclosure, generative-AI and data
             availability statements.
 
-Output: outputs/submission_JFRM_uncertainty/ and outputs/submission_Geocarto_DL/
+Output: outputs/submission_JFRM_uncertainty/ and outputs/submission_EJRS_DL/ (build_geocarto is kept for reference; the DL paper now targets
+the European Journal of Remote Sensing, single-anonymous, abstract 150-200 words, 2-6 keywords, T&F APA, no stated length limit).
 """
 import datetime
 import logging
@@ -313,11 +314,94 @@ Known weak points: Fig. 5 (probability maps) and Figs 1-4 were drawn 10-13 inche
 """)
     return n_all
 
+# ------------------------------------------------------------------------------------------------ European Journal of Remote Sensing
+EJRS_HIGHLIGHTS = [
+    "On one spatial partition, a U-Net using Sentinel-1, Sentinel-2, terrain and settlement layers separated flooded from dry pixels better than any single data stream (F1 0.792 against 0.680 for SAR alone).",
+    "A prior-corrected pixel-level classifier matched the full U-Net (0.754 against 0.750), and over four partitions it was slightly ahead (0.724 against 0.701), so a deep network is not automatically the better tool.",
+    "No model reliably identified which of 179 buildings in Mepe were flagged as flooded (ROC AUC 0.64 to 0.83), so these maps should not drive building-level decisions.",
+]
+
+
+def build_ejrs(root):
+    out = root / "outputs/submission_EJRS_DL"
+    if out.exists():
+        shutil.rmtree(out)
+    out.mkdir(parents=True)
+    p = parse(root, "dl_manuscript.md")
+    kw = KEYWORDS["GEO"]; assert 2 <= len(kw) <= 6
+    n_abs = wc(GEOCARTO_ABSTRACT); assert 150 <= n_abs <= 200, n_abs
+    n_hl = sum(wc(h) for h in EJRS_HIGHLIGHTS); assert 3 <= len(EJRS_HIGHLIGHTS) <= 5
+    title = TITLES["GEO"]
+    figs = figure_files(root, out, p["figs"], 300)
+    refs = sorted(p["refs"], key=lambda r: re.sub(r"[^a-z ]", "", r.lower()))
+    tables = f"\n\n{PAGEBREAK}\n\n".join(f"{c}\n\n{tb}" + (f"\n\n{n}" if n else "") for c, tb, n in p["tabs"])
+    captions = "\n\n".join(c for _, c in p["figs"])
+    hl = "\n".join(f"- {h}" for h in EJRS_HIGHLIGHTS)
+    md = (f"# {title}\n\n## Abstract\n\n{GEOCARTO_ABSTRACT}\n\n**Key policy highlights**\n\n{hl}\n\n**Keywords:** {'; '.join(kw)}\n\n{p['body']}\n\n"
+          f"## Declaration of interest statement\n\nThe authors report there are no competing interests to declare.\n\n"
+          f"## Funding\n\nNo funding was obtained for this work.\n\n"
+          f"## Declaration of generative AI use\n\nGenerative AI (Claude, Anthropic) assisted in writing the model, training and figure-generation code and in drafting and editing text; details are in Section 4.8. The authors reviewed and edited the content and take full responsibility for it. No generative AI was used to create images.\n\n"
+          f"## Data availability statement\n\n{p['data_av']}\n\n"
+          f"## References\n\n" + "\n\n".join(refs) + f"\n\n{PAGEBREAK}\n\n## Tables\n\n{tables}\n\n{PAGEBREAK}\n\n## Figure captions\n\n{captions}\n")
+    tmp = out / "_m.md"; tmp.write_text(md)
+    pandoc(tmp, out / "02_Manuscript.docx", root); tmp.unlink()
+    style_doc(out / "02_Manuscript.docx", line_numbers=True, spacing=1.5, body_pt=11)
+    n_all = wc(md)
+    plain_doc(out / "01_Title_page.docx", title, [
+        ("Authors: ", "[Full names]"), ("Affiliations: ", "[Where the research was conducted]"),
+        ("Corresponding author: ", "[Name], dzimike.md@gmail.com"), ("ORCiD: ", "[for each author, where available]"),
+        ("CRediT roles: ", "[to be entered in the submission portal for each author]"),
+        ("Acknowledgments: ", p["ack"]), ("Funding details: ", "No funding was obtained for this work."),
+        ("Disclosure statement: ", "The authors report there are no competing interests to declare."),
+        ("Repository: ", REPO),
+        ("Counts: ", f"abstract {n_abs} words; key policy highlights {n_hl} words; manuscript about {n_all:,} words in total including references, tables and captions; {len(figs)} figures and {len(p['tabs'])} tables."),
+    ])
+    plain_doc(out / "03_Cover_letter.docx", None, [
+        "[Date]", "The Editor\nEuropean Journal of Remote Sensing", "Dear Editor,",
+        f"We submit \"{title}\" as a Research Article.",
+        "We ask which Sentinel data streams a U-Net needs to segment dam-release flooding and how the answer compares with a calibrated pixel-level classifier. Using a 28-band stack at 10 m and labels from Sentinel-1 backscatter change and Sentinel-2 water indices, "
+        "we run a four-experiment ablation on one spatial block partition and repeat it on three more, and we repeat the XGBoost comparison over ten. The full U-Net is the best U-Net on every partition, but a prior-corrected XGBoost is level with it "
+        "(F1 0.724 against 0.701 on average), the U-Net ranking is less secure on other partitions than on the first, and no model separates analyst-flagged flooded buildings reliably. We state these limits in the paper.",
+        "Related work: the labels come from a mapping paper and an uncertainty-propagation paper uses the same classifier family [status of each to be stated by the authors]. They report different analyses and results. All three were prepared with generative AI assistance, declared in the manuscript.",
+        "The manuscript is not under consideration elsewhere and has not been published; all authors have approved it [the authors to confirm]. Code and the derived label and feature tables are at " + REPO + "; model weights and probability rasters are not distributed, as the data availability statement explains.",
+        "Sincerely,", "[Corresponding author name]\ndzimike.md@gmail.com",
+    ], spacing=1.2)
+    (out / "figures" / "README.txt").write_text("Fig1-Fig7 as cited in the text, PNG and TIFF (RGB, 300 dpi tag; colour figures need 300 dpi at final size).\n")
+    low = [f"- Fig{i} ({n}): {w} x {h} px, {d:.0f} dpi at 170 mm" for i, n, w, h, d in figs]
+    (out / "00_Checklist.md").write_text(f"""# European Journal of Remote Sensing submission checklist (DL paper)
+
+Built {datetime.date.today()} by src/submission/build_journal_packages.py. Rules: https://www.tandfonline.com/action/authorSubmission?show=instructions&journalCode=tejr20 (read 2026-11-13).
+
+## Files
+01_Title_page.docx (names, acknowledgments, funding, repository), 02_Manuscript.docx (tables one per page, figure captions listed at the end), 03_Cover_letter.docx, figures/.
+
+## Needed from the authors
+- Names, affiliations, ORCiDs, CRediT roles (entered in the portal), corresponding author.
+- **Primary citation for the 24 designated communities** (Section 2 and the Fig. 1 caption still carry a bracketed placeholder).
+- Status of the two other manuscripts (cover letter).
+- Article publishing charge: $1,815 / GBP 1,344 / EUR 1,615 plus tax (open access); waivers and agreements are described on the journal page.
+- Whether the journal wants the 3-5 key policy highlights: the page says to check; they are drafted ({n_hl} words) and sit under the abstract, delete them if the editor says not.
+
+## Checks against the instructions
+- Single-anonymous review, so the repository link stays in the manuscript. No stated page or word limit for a Research Article.
+- Abstract {n_abs} words (150-200, unstructured); {len(kw)} keywords (2-6).
+- Order: title page, abstract, keywords, main text (Introduction, Materials and methods, Results, Discussion), acknowledgments, declaration of interest, references (T&F APA 7, converted from the numbered list), tables on individual pages, figures separate, captions as a list.
+- Statements present: disclosure, funding, generative AI, data availability. The journal applies a share-upon-reasonable-request policy; the paper says what is public (code, labels, feature tables) and what is not (weights, probability rasters).
+- Single quotation marks and consistent spelling are asked for: the manuscript uses British/American spelling as written, not checked line by line.
+- Figures: 300 dpi colour at final size.
+
+## Figures
+""" + "\n".join(low) + """
+
+Known weak points: Fig. 5 (probability maps) and Figs 1-4 were drawn 10-13 inches wide and print with 4-6 pt lettering at 170 mm; redraw at final width if time allows.
+""")
+    return n_all
+
 
 def main() -> None:
     root = get_project_root()
-    n1 = build_jfrm(root); n2 = build_geocarto(root)
-    log.info("JFRM main text %d words; Geocarto manuscript about %d words", n1, n2)
+    n1 = build_jfrm(root); n2 = build_ejrs(root)
+    log.info("JFRM main text %d words; EJRS manuscript about %d words", n1, n2)
 
 
 if __name__ == "__main__":
