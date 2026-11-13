@@ -68,11 +68,19 @@ def main() -> None:
         src = root / "outputs/figures" / n
         shutil.copy(src, figs / f"Fig{i}.png")
         im = Image.open(src).convert("RGB"); w, h = im.size
-        im.save(figs / f"Fig{i}.tif", compression="tiff_lzw", dpi=(300, 300))
-        notes.append((i, n, w, h, w / (174 / 25.4)))
+        dpi = w / (174 / 25.4)   # resolution when printed at the 174 mm text width
+        im.save(figs / f"Fig{i}.tif", compression="tiff_lzw", dpi=(round(dpi), round(dpi)))
+        notes.append((i, n, w, h, dpi))
         body = body.replace(f"![](../outputs/figures/{n})", f"![](../outputs/figures/{n}){{width=17.4cm}}", 1)
     body = body.replace("../outputs/figures/", str(root / "outputs/figures") + "/")
     body = strip_caption_periods(convert_citations(body))
+    # ---- figures with their captions move to the end, one per page: inline placement left part-empty pages and split captions
+    fig_re = re.compile(r"(!\[\]\([^)]+\)\{width=17\.4cm\})\n\n(\*\*Fig\. \d+\*\*[^\n]*)\n")
+    fig_blocks = fig_re.findall(body)
+    assert len(fig_blocks) == len(names), (len(fig_blocks), len(names))
+    body = fig_re.sub("", body)
+    pagebreak = '```{=openxml}\n<w:p><w:r><w:br w:type="page"/></w:r></w:p>\n```'
+    figs_md = "\n\n".join(f"{pagebreak}\n\n{img}\n\n{cap}" for img, cap in fig_blocks)
 
     # ---- references: one alphabetical list in Springer style; web sources carry an access date
     web_prefix = ("Ankah", "Asaase", "International Charter", "Citi Newsroom", "UNOSAT")
@@ -97,7 +105,7 @@ def main() -> None:
             "**Code availability** The analysis code is in the repository named under Data availability (version 1.0.0).\n\n"
             "**Ethics approval and consent to participate** Not applicable: the study uses satellite and open geospatial data only, and reports results aggregated to districts.\n\n"
             "**Use of generative AI** Documented in Section 4.5.")
-    md = f"# {TITLE}\n\n## Abstract\n\n{abstract}\n\n**Keywords** {'; '.join(kw)}\n\n{body}\n\n{ref_md}\n\n{decl}\n"
+    md = f"# {TITLE}\n\n## Abstract\n\n{abstract}\n\n**Keywords** {'; '.join(kw)}\n\n{body}\n\n{ref_md}\n\n{decl}\n\n{figs_md}\n"
     tmp = out / "_manuscript.md"; tmp.write_text(md)
     pandoc(tmp, out / "02_Manuscript.docx", root); tmp.unlink()
     style_doc(out / "02_Manuscript.docx", line_numbers=True, spacing=1.5, body_pt=11)
@@ -145,17 +153,18 @@ Generated {datetime.date.today()} by src/submission/build_springer_package.py fr
 - Author names, affiliations, ORCID iDs, corresponding-author name (title page, cover letter).
 - Author-contribution statement (placeholder in 'Statements and Declarations'). Funding and competing-interests statements say there is nothing to declare.
 - **Primary citation for the 24 designated communities** (NADMO/VRA document: issuer, title, date, URL). Section 2 still carries a bracketed placeholder.
-- Fig. 5a no longer reproduces Charter imagery: it draws the 179 analyst-flagged buildings as footprints on a map of our extent, so no permission is needed for it (the Charter products are cited in Methods).
 - Companion-manuscript status (cover letter), suggested reviewers with institutional e-mail addresses.
-- The VRA 2023 Annual Report was not found online; if you have it, cite it in Section 3.1 and check the peak-release date.
-- Confirm the repository DOI/version: create the v1.0.0 tag, or deposit on Zenodo and cite the DOI.
+- The VRA 2023 Annual Report and the release hydrograph were not found online; if you have them, cite them in Section 3.1 and add the hydrograph to Section 6.1.
+- **Repository citation**: the reference list cites the repository as 'Authors (2026)'. Replace with the real author names, and preferably archive v1.0.0 on Zenodo (GitHub-Zenodo integration) and cite its DOI.
 
 ## Checks done
 - Abstract {n_abs} words (limit 150-250); 6 keywords (limit 4-6); abstract abbreviations defined (SAR, UNOSAT, F1 score).
 - Headings are decimal, three levels at most. Captions: 'Fig. n' bold, no closing period; panel letters lowercase; 'Fig.' in the text.
-- Citations are name-year in parentheses; reference list alphabetical, DOIs as links, journal names in full.
+- Citations are name-year in parentheses; reference list alphabetical, DOIs as links (all journal articles, checked against Crossref), journal names in full.
 - Statements and Declarations follow the references; AI use is documented in Section 4.5 (Methods).
 - Acknowledgements are on the title page, not in the manuscript.
+- Figures with their captions are placed after the Statements and Declarations, one per page, so no caption is split and no page is left part-empty; every image carries alt text (its caption). Line numbers sit 1 cm from the text; the footer page number is excluded from numbering.
+- TIFF files carry their true resolution at 174 mm (600-1,305 dpi), meeting the 600 dpi asked for combination art.
 - Main text {n_body:,} words (the journal states no word limit on the guidelines page).
 
 ## Known departures from the guidelines
@@ -164,6 +173,7 @@ Generated {datetime.date.today()} by src/submission/build_springer_package.py fr
 - Lettering size: Figs 2 and 8 were redrawn at final width (174 mm, 600 dpi). Their panel titles are 6.2-6.6 pt, legends 4.8-5.4 pt and in-panel notes about 5 pt:
   readable, but below the 8-12 pt the guidelines ask for. Sixteen panels (Fig. 5) or twelve plus a banner (Fig. 2) cannot carry larger text at one column width;
   reaching 8 pt would mean fewer panels per figure (for example splitting Fig. 5 into two figures).
+- Several maps (Figs 1, 3, 7 and the agreement panels of Fig. 5) separate classes by colour only; the guidelines ask for patterns or other redundant cues where colour carries meaning. Not yet redrawn.
 - Captions mention colours; if the journal prints figures in black and white, they should be reworded (the guidelines say not to refer to colour then).
 - Some figures also carry panel titles; the guidelines say not to put titles or captions inside illustrations.
 - The page does not say whether review is single- or double-blind; author names are only on the title page.

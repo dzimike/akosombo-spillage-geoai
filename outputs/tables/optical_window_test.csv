@@ -1,0 +1,4 @@
+composite,optical_water_km2,optical_only_km2,agreement_km2,sar_only_km2,flood_extent_km2,buildings,population,roads_km,optical_valid_pct_of_domain,optical_IoU_with_published_mask_outside_pre_water,published_extent_lost_km2,lost_where_no_valid_optical_km2,lost_where_observed_dry_km2,extent_gained_km2
+published map,56.55,9.52,7.06,27.63,44.22,59,5394,11.8,,,,,,
+event (15 Sep-15 Nov),16.04,8.98,7.05,27.64,43.67,58,5340,11.8,96.1,0.967,0.54,0.0,0.54,0.0
+release (15 Sep-30 Oct),17.27,8.26,9.01,25.68,42.96,63,5256,12.2,86.0,0.571,2.92,1.78,1.14,1.66

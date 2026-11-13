@@ -28,6 +28,7 @@ def set_cell_border(table):
 
 def add_page_number(section):
     p = section.footer.paragraphs[0]; p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p._p.get_or_add_pPr().append(OxmlElement("w:suppressLineNumbers"))  # some renderers number footer lines too
     run = p.add_run()
     for tag, txt in (("begin", None), (None, "PAGE"), ("end", None)):
         if tag:
@@ -71,11 +72,28 @@ def style_doc(path: Path, line_numbers: bool = True, spacing: float = 1.5, body_
         sec.left_margin = sec.right_margin = sec.top_margin = sec.bottom_margin = Cm(2.5)
         add_page_number(sec)
         if line_numbers:
-            ln = OxmlElement("w:lnNumType"); ln.set(qn("w:countBy"), "1"); ln.set(qn("w:restart"), "continuous")
-            sec._sectPr.append(ln)
-    for p in d.paragraphs:
+            # distance 1 cm keeps three-digit numbers clear of the text; lnNumType must precede pgNumType/cols/docGrid in sectPr
+            ln = OxmlElement("w:lnNumType"); ln.set(qn("w:countBy"), "1"); ln.set(qn("w:restart"), "continuous"); ln.set(qn("w:distance"), "567")
+            after = [c for c in sec._sectPr if c.tag in {qn(t) for t in ("w:pgNumType", "w:cols", "w:formProt", "w:vAlign", "w:noEndnote", "w:titlePg",
+                                                                         "w:textDirection", "w:bidi", "w:rtlGutter", "w:docGrid", "w:printerSettings")}]
+            if after:
+                after[0].addprevious(ln)
+            else:
+                sec._sectPr.append(ln)
+    paras = d.paragraphs
+    for i, p in enumerate(paras):
         if p.style.name in ("Image Caption", "Captioned Figure"):
             p.paragraph_format.keep_with_next = False
+        drawings = p._p.findall(".//" + qn("wp:docPr"))
+        if drawings and i + 1 < len(paras):
+            # keep each figure on the page of its caption, keep the caption in one piece, and give the image alt text from the caption
+            cap = paras[i + 1]
+            p.paragraph_format.keep_with_next = True
+            cap.paragraph_format.keep_together = True
+            alt = cap.text.strip()
+            for dp in drawings:
+                if alt and not dp.get("descr"):
+                    dp.set("descr", alt[:1000])
     d.save(path)
 
 

@@ -1,0 +1,7 @@
+quantity,method,exposed,domain_total,exposed_pct
+population,"WorldPop 1 km UN-adjusted, even spread (main)",5394.0,366077.0,1.47
+population,"WorldPop 100 m unconstrained, even spread",4493.0,366077.0,1.23
+population,WorldPop 100 m allocated to OSM building footprints,4398.0,366077.0,1.2
+cropland_ha,pre-event NDVI >= 0.35 (vegetated land; main),562.0,110038.0,0.51
+cropland_ha,ESA WorldCover 2021 cropland,587.0,77210.0,0.76
+cropland_ha,WorldCover cropland and NDVI >= 0.35,101.0,20879.0,0.48

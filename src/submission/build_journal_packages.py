@@ -33,9 +33,9 @@ NO_FUNDING = "The authors declare that no funds, grants, or other support were r
 NO_COI = "The authors have no relevant financial or non-financial interests to disclose."
 
 GEOCARTO_ABSTRACT = (
-    "Delineating flood extent from satellites is critical for disaster response, yet the contribution of different data sources to deep learning "
+    "Satellite flood mapping is critical for disaster response, yet the contribution of different data sources to deep learning "
     "segmentation of dam-release inundation in West Africa is poorly characterised. We apply a U-Net to the 15 September–30 October 2023 Akosombo Dam "
-    "spillage along Ghana's Lower Volta River, using a 28-band stack of Sentinel-1 SAR, Sentinel-2, terrain, hydrological and settlement features at 10 m, "
+    "spillage along Ghana's Lower Volta River, using a 28-band stack of Sentinel-1 SAR, Sentinel-2, terrain, hydrological and settlement features on a 10 m grid, "
     "with labels from Sentinel-1 backscatter change and optical water outside pre-existing water (44.2 km²). A four-experiment ablation (SAR 5 bands, "
     "optical 7, terrain 21, all 28) is trained on one spatial block partition and repeated on three more. On the main partition the full U-Net reached "
     "pooled test F1 0.792 against 0.680 (SAR-only), 0.636 (optical-only) and 0.528 (terrain-only), but none recovered more than 0.69 of the SAR-change-only "

@@ -31,7 +31,7 @@ DISTRICT_COLORS = dict(DISTRICT)
 DISTRICT_ORDER = ["North Tongu", "Shai-Osudoku", "Lower Manya Krobo",
                    "Ada East", "Central Tongu", "South Tongu"]
 
-# Flood confidence class colours — MUST match the caption text exactly
+# Detection-source class colours — MUST match the caption text exactly
 CLASS_COLORS = {
     0: (CLASS["none"], "Not flooded"),
     1: (CLASS["sar"], "SAR only"),
@@ -181,7 +181,7 @@ def main():
     ]
 
     y = 0.98
-    legend_ax.text(0.0, y, "Flood confidence (5-class)", fontsize=8.5, fontweight="bold",
+    legend_ax.text(0.0, y, "Fused flood map (detection source)", fontsize=8.5, fontweight="bold",
                     transform=legend_ax.transAxes)
     leg1 = legend_ax.legend(handles=class_handles, loc="upper left",
                             bbox_to_anchor=(0.0, 0.96), fontsize=7.3,
